@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c84bpfc7u50gy"]
+
+[ext_resource type="PackedScene" uid="uid://77btscxjimtg" path="res://Scenes/Paths/EnemyPathBase.tscn" id="1_5qqt3"]
+
+[sub_resource type="Curve3D" id="Curve3D_fcesv"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[node name="Eagle Sideways Path" instance=ExtResource("1_5qqt3")]
+curve = SubResource("Curve3D_fcesv")

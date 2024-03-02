@@ -97,9 +97,6 @@ func _on_hitbox_area_entered(area):
 	damaged_vector = Vector2(global_position.x, global_position.y) - Vector2(area.global_position.x, area.global_position.y)
 	can_move = false
 	can_move_timer.start()
-	print(damaged_vector)
-	
-
 
 func _on_can_move_timer_timeout():
 	knockback_force = base_knockback_force

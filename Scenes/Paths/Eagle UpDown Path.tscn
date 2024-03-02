@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://58kdfglurnjm"]
+
+[ext_resource type="PackedScene" uid="uid://77btscxjimtg" path="res://Scenes/Paths/EnemyPathBase.tscn" id="1_bhjt0"]
+
+[node name="Eagle Up Down Path" instance=ExtResource("1_bhjt0")]

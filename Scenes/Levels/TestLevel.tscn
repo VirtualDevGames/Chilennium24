@@ -2,40 +2,19 @@
 
 [ext_resource type="PackedScene" uid="uid://cyhkdwpdoucj4" path="res://Scenes/Characters/Player/Player.tscn" id="1_4spf0"]
 [ext_resource type="Script" path="res://Scenes/Levels/GameManager.gd" id="1_evwrm"]
-[ext_resource type="PackedScene" uid="uid://dkcggsjtr1x6t" path="res://Scenes/Characters/Enemy/BaseEnemy.tscn" id="2_komva"]
 [ext_resource type="PackedScene" uid="uid://bvduxw68cdm6g" path="res://Scenes/Camera/LevelCamera.tscn" id="3_kupa4"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_8crns"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3D.gd" id="5_kmr8p"]
 [ext_resource type="PackedScene" uid="uid://eaa3e6q6nx2g" path="res://Scenes/UI/InGameUI.tscn" id="6_ldcae"]
 [ext_resource type="PackedScene" uid="uid://cj364tf1pituh" path="res://Scenes/Obstacles/Islands/BaseIsland.tscn" id="7_kvn7x"]
 [ext_resource type="PackedScene" uid="uid://ls5np6o8qiw8" path="res://Scenes/Auto Scroller/AutoScroller.tscn" id="9_vtjwl"]
+[ext_resource type="PackedScene" uid="uid://77btscxjimtg" path="res://Scenes/Paths/EnemyPathBase.tscn" id="10_61efv"]
 
 [node name="TestLevel" type="Node3D"]
 script = ExtResource("1_evwrm")
 
 [node name="Player" parent="." instance=ExtResource("1_4spf0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.3468, 0, -0.278389)
-
-[node name="BaseEnemy2" parent="." instance=ExtResource("2_komva")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -26.0957, -2.08364, 0)
-
-[node name="BaseEnemy3" parent="." instance=ExtResource("2_komva")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20.2931, -2.33565, 0)
-
-[node name="BaseEnemy6" parent="." instance=ExtResource("2_komva")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14.0182, 2.01359, 0)
-
-[node name="BaseEnemy4" parent="." instance=ExtResource("2_komva")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.23352, 3.58273, 0)
-
-[node name="BaseEnemy5" parent="." instance=ExtResource("2_komva")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.3945, -4.48692, 0)
-
-[node name="BaseEnemy7" parent="." instance=ExtResource("2_komva")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.8741, -3.01854, 0)
-
-[node name="BaseEnemy" parent="." instance=ExtResource("2_komva")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.5197, 0, -0.278389)
 
 [node name="LevelCamera" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_kupa4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.1602, 0, 15)
@@ -70,7 +49,77 @@ transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, -25.41
 transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, -8.55089, -8.43784, -1.90735e-06)
 
 [node name="BaseIsland3" parent="." instance=ExtResource("7_kvn7x")]
-transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 5.36333, 7.8662, 0)
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, -0.0438552, 7.8662, 0)
 
-[node name="AutoScroller" parent="." instance=ExtResource("9_vtjwl")]
+[node name="AutoScroller" parent="." node_paths=PackedStringArray("player") instance=ExtResource("9_vtjwl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.1602, 0, 0)
+player = NodePath("../Player")
+
+[node name="HoverPath" parent="." instance=ExtResource("10_61efv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.1852, 2.24065, 0)
+
+[node name="HoverPath2" parent="." instance=ExtResource("10_61efv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7148, -3.00867, 0)
+
+[node name="Up Down Eagle 1" parent="." instance=ExtResource("10_61efv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.2462, 0, 0)
+
+[node name="Up Down Eagle 2" parent="." instance=ExtResource("10_61efv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.8286, 0, 0)
+path_start_position_percentage = 0.2
+
+[node name="Up Down Eagle 3" parent="." instance=ExtResource("10_61efv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.345, 0, 0)
+path_start_position_percentage = 0.4
+
+[node name="Up Down Eagle 4" parent="." instance=ExtResource("10_61efv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.9275, 0, 0)
+path_start_position_percentage = 0.6
+
+[node name="Up Down Eagle 5" parent="." instance=ExtResource("10_61efv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.495, 0, 0)
+path_start_position_percentage = 0.8
+
+[node name="Up Down Eagle 6" parent="." instance=ExtResource("10_61efv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.0773, 0, 0)
+path_start_position_percentage = 1.0
+
+[node name="Up Down Eagle 7" parent="." instance=ExtResource("10_61efv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.6892, 0, 0)
+path_start_position_percentage = 0.2
+
+[node name="Up Down Eagle 8" parent="." instance=ExtResource("10_61efv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.2057, 0, 0)
+path_start_position_percentage = 0.4
+
+[node name="Up Down Eagle 9" parent="." instance=ExtResource("10_61efv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.7881, 0, 0)
+path_start_position_percentage = 0.6
+
+[node name="Up Down Eagle 10" parent="." instance=ExtResource("10_61efv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.3556, 0, 0)
+path_start_position_percentage = 0.8
+
+[node name="Up Down Eagle 11" parent="." instance=ExtResource("10_61efv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.9379, 0, 0)
+path_start_position_percentage = 1.0
+
+[node name="Up Down Eagle 12" parent="." instance=ExtResource("10_61efv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.3463, 0, 0)
+path_start_position_percentage = 0.2
+
+[node name="Up Down Eagle 13" parent="." instance=ExtResource("10_61efv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.8627, 0, 0)
+path_start_position_percentage = 0.4
+
+[node name="Up Down Eagle 14" parent="." instance=ExtResource("10_61efv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4451, 0, 0)
+path_start_position_percentage = 0.6
+
+[node name="Up Down Eagle 15" parent="." instance=ExtResource("10_61efv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.0127, 0, 0)
+path_start_position_percentage = 0.8
+
+[node name="Up Down Eagle 16" parent="." instance=ExtResource("10_61efv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.5949, 0, 0)
+path_start_position_percentage = 1.0

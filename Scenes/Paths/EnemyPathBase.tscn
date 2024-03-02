@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://77btscxjimtg"]
+
+[ext_resource type="Script" path="res://Scenes/Paths/EnemyPath.gd" id="1_hfxn8"]
+
+[sub_resource type="Curve3D" id="Curve3D_dwnxt"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[node name="HoverPath" type="Path3D"]
+curve = SubResource("Curve3D_dwnxt")
+script = ExtResource("1_hfxn8")
+path_speed = 3.0
+
+[node name="PathFollow3D" type="PathFollow3D" parent="."]
+rotation_mode = 0
