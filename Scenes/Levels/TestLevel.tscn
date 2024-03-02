@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://t74emdt05py0"]
+[gd_scene load_steps=11 format=3 uid="uid://t74emdt05py0"]
 
 [ext_resource type="PackedScene" uid="uid://cyhkdwpdoucj4" path="res://Scenes/Characters/Player/Player.tscn" id="1_4spf0"]
 [ext_resource type="Script" path="res://Scenes/Levels/GameManager.gd" id="1_evwrm"]
@@ -7,8 +7,9 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3D.gd" id="5_kmr8p"]
 [ext_resource type="PackedScene" uid="uid://eaa3e6q6nx2g" path="res://Scenes/UI/InGameUI.tscn" id="6_ldcae"]
 [ext_resource type="PackedScene" uid="uid://cj364tf1pituh" path="res://Scenes/Obstacles/Islands/BaseIsland.tscn" id="7_kvn7x"]
+[ext_resource type="PackedScene" uid="uid://58kdfglurnjm" path="res://Scenes/Paths/Eagle UpDown Path.tscn" id="9_2mhal"]
 [ext_resource type="PackedScene" uid="uid://ls5np6o8qiw8" path="res://Scenes/Auto Scroller/AutoScroller.tscn" id="9_vtjwl"]
-[ext_resource type="PackedScene" uid="uid://77btscxjimtg" path="res://Scenes/Paths/EnemyPathBase.tscn" id="10_61efv"]
+[ext_resource type="PackedScene" uid="uid://c84bpfc7u50gy" path="res://Scenes/Paths/Eagle LeftRight Path.tscn" id="10_6j2yg"]
 
 [node name="TestLevel" type="Node3D"]
 script = ExtResource("1_evwrm")
@@ -55,71 +56,51 @@ transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, -0.043
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.1602, 0, 0)
 player = NodePath("../Player")
 
-[node name="HoverPath" parent="." instance=ExtResource("10_61efv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.1852, 2.24065, 0)
+[node name="Eagle Up Down Path" parent="." instance=ExtResource("9_2mhal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.9468, 0.473507, 0.221615)
 
-[node name="HoverPath2" parent="." instance=ExtResource("10_61efv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7148, -3.00867, 0)
+[node name="Eagle Up Down Path2" parent="." instance=ExtResource("9_2mhal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.9064, 4.62432, 0.221615)
 
-[node name="Up Down Eagle 1" parent="." instance=ExtResource("10_61efv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.2462, 0, 0)
+[node name="Eagle Up Down Path3" parent="." instance=ExtResource("9_2mhal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.5748, -2.45711, 0.221615)
 
-[node name="Up Down Eagle 2" parent="." instance=ExtResource("10_61efv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.8286, 0, 0)
-path_start_position_percentage = 0.2
+[node name="Eagle Up Down Path4" parent="." instance=ExtResource("9_2mhal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.6292, 8.9986, 0.221615)
 
-[node name="Up Down Eagle 3" parent="." instance=ExtResource("10_61efv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.345, 0, 0)
-path_start_position_percentage = 0.4
+[node name="Eagle Up Down Path5" parent="." instance=ExtResource("9_2mhal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6862, 8.9986, 0.221615)
+path_start_position_percentage = 0.5
 
-[node name="Up Down Eagle 4" parent="." instance=ExtResource("10_61efv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.9275, 0, 0)
-path_start_position_percentage = 0.6
+[node name="Eagle Up Down Path6" parent="." instance=ExtResource("9_2mhal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7991, 8.9986, 0.221615)
 
-[node name="Up Down Eagle 5" parent="." instance=ExtResource("10_61efv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.495, 0, 0)
-path_start_position_percentage = 0.8
+[node name="Eagle Up Down Path7" parent="." instance=ExtResource("9_2mhal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.934, -1.97121, 0.221615)
 
-[node name="Up Down Eagle 6" parent="." instance=ExtResource("10_61efv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.0773, 0, 0)
-path_start_position_percentage = 1.0
+[node name="Eagle Up Down Path8" parent="." instance=ExtResource("9_2mhal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.2675, 0.451632, 0.221611)
 
-[node name="Up Down Eagle 7" parent="." instance=ExtResource("10_61efv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.6892, 0, 0)
-path_start_position_percentage = 0.2
+[node name="Eagle Up Down Path9" parent="." instance=ExtResource("9_2mhal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.3546, 2.61803, 0.221611)
 
-[node name="Up Down Eagle 8" parent="." instance=ExtResource("10_61efv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.2057, 0, 0)
-path_start_position_percentage = 0.4
+[node name="Eagle Up Down Path10" parent="." instance=ExtResource("9_2mhal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.2278, 0.184175, 0.221611)
 
-[node name="Up Down Eagle 9" parent="." instance=ExtResource("10_61efv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.7881, 0, 0)
-path_start_position_percentage = 0.6
+[node name="Eagle Up Down Path11" parent="." instance=ExtResource("9_2mhal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.0263, -2.86389, 0.221611)
 
-[node name="Up Down Eagle 10" parent="." instance=ExtResource("10_61efv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.3556, 0, 0)
-path_start_position_percentage = 0.8
+[node name="Eagle Sideways Path" parent="." instance=ExtResource("10_6j2yg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.9609, 8.49198, 0)
 
-[node name="Up Down Eagle 11" parent="." instance=ExtResource("10_61efv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.9379, 0, 0)
-path_start_position_percentage = 1.0
+[node name="Eagle Sideways Path2" parent="." instance=ExtResource("10_6j2yg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.2624, 2.17074, 0)
 
-[node name="Up Down Eagle 12" parent="." instance=ExtResource("10_61efv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.3463, 0, 0)
-path_start_position_percentage = 0.2
+[node name="Eagle Sideways Path3" parent="." instance=ExtResource("10_6j2yg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.3314, -3.21775, 0)
 
-[node name="Up Down Eagle 13" parent="." instance=ExtResource("10_61efv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.8627, 0, 0)
-path_start_position_percentage = 0.4
+[node name="Eagle Sideways Path4" parent="." instance=ExtResource("10_6j2yg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2998, 8.44293, 0)
 
-[node name="Up Down Eagle 14" parent="." instance=ExtResource("10_61efv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4451, 0, 0)
-path_start_position_percentage = 0.6
-
-[node name="Up Down Eagle 15" parent="." instance=ExtResource("10_61efv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.0127, 0, 0)
-path_start_position_percentage = 0.8
-
-[node name="Up Down Eagle 16" parent="." instance=ExtResource("10_61efv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.5949, 0, 0)
-path_start_position_percentage = 1.0
+[node name="Eagle Sideways Path5" parent="." instance=ExtResource("10_6j2yg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6389, -8.08986, 0)
