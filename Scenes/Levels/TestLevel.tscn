@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://t74emdt05py0"]
+
+[ext_resource type="PackedScene" uid="uid://cyhkdwpdoucj4" path="res://Scenes/Characters/Player/Player.tscn" id="1_4spf0"]
+[ext_resource type="PackedScene" uid="uid://dkcggsjtr1x6t" path="res://Scenes/Characters/Enemy/BaseEnemy.tscn" id="2_komva"]
+
+[node name="TestLevel" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_4spf0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0547138, 0, -0.278389)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.6231)
+
+[node name="BaseEnemy" parent="." instance=ExtResource("2_komva")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.25416, 0, 0.0934696)

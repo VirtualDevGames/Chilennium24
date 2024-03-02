@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://1s1hy31yra8"]
+
+[ext_resource type="Texture2D" uid="uid://ct5dmokcsmu7y" path="res://Assets/Test Grids/Orange/texture_02.png" id="1_6byry"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vqflb"]
+albedo_texture = ExtResource("1_6byry")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f48oe"]
+
+[node name="Monkey" type="CharacterBody3D"]
+transform = Transform3D(0.825, 0, 0, 0, 0.825, 0, 0, 0, 0.825, 0, 0, 0)
+collision_mask = 38
+
+[node name="Monkey" type="CSGCylinder3D" parent="."]
+material = SubResource("StandardMaterial3D_vqflb")
+
+[node name="Eye" type="CSGSphere3D" parent="Monkey"]
+transform = Transform3D(0.27, 0, 0, 0, 0.27, 0, 0, 0, 0.27, 0.390253, 0.640804, 0.171881)
+
+[node name="Eye 2" type="CSGSphere3D" parent="Monkey"]
+transform = Transform3D(0.27, 0, 0, 0, 0.27, 0, 0, 0, 0.27, 0.390253, 0.640804, -0.209655)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_f48oe")

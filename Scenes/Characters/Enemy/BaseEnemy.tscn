@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkcggsjtr1x6t"]
+
+[ext_resource type="PackedScene" uid="uid://656k1l6i1b4u" path="res://Scenes/Components/Hitbox/HitboxComponent.tscn" id="1_6w1r1"]
+[ext_resource type="Texture2D" uid="uid://cgu4eqqbe8eyj" path="res://Assets/Test Grids/Red/texture_02.png" id="2_v27aw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_627ik"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_onnka"]
+albedo_texture = ExtResource("2_v27aw")
+
+[node name="BaseEnemy" type="RigidBody3D"]
+collision_layer = 8
+collision_mask = 17
+gravity_scale = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_627ik")
+
+[node name="HitboxComponent" parent="." instance=ExtResource("1_6w1r1")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
+collision_layer = 8
+collision_mask = 17
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitboxComponent"]
+shape = SubResource("BoxShape3D_627ik")
+
+[node name="Body" type="CSGBox3D" parent="."]
+material = SubResource("StandardMaterial3D_onnka")
+
+[node name="Eye" type="CSGSphere3D" parent="Body"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.538082, 0.223153, 0.207717)
+
+[node name="Eye 2" type="CSGSphere3D" parent="Body"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.538082, 0.223153, -0.249494)
