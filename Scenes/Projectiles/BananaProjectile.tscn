@@ -18,12 +18,10 @@ script = ExtResource("1_7i754")
 transform = Transform3D(0.2, 0, 0, 0, 0.086, 0, 0, 0, 0.076, 0, 0, 0)
 material = SubResource("StandardMaterial3D_lo72j")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="Hitbox" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
 transform = Transform3D(0.28829, 0, 0, 0, 0.28829, 0, 0, 0, 0.28829, 0, 0, 0)
 shape = SubResource("SphereShape3D_x18h0")
 
-[node name="Area3D" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(0.28829, 0, 0, 0, 0.28829, 0, 0, 0, 0.28829, 0, 0, 0)
-shape = SubResource("SphereShape3D_x18h0")
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

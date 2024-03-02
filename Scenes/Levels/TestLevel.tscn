@@ -1,15 +1,56 @@
-[gd_scene load_steps=3 format=3 uid="uid://t74emdt05py0"]
+[gd_scene load_steps=6 format=3 uid="uid://t74emdt05py0"]
 
 [ext_resource type="PackedScene" uid="uid://cyhkdwpdoucj4" path="res://Scenes/Characters/Player/Player.tscn" id="1_4spf0"]
 [ext_resource type="PackedScene" uid="uid://dkcggsjtr1x6t" path="res://Scenes/Characters/Enemy/BaseEnemy.tscn" id="2_komva"]
+[ext_resource type="PackedScene" uid="uid://bvduxw68cdm6g" path="res://Scenes/Camera/LevelCamera.tscn" id="3_kupa4"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_8crns"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3D.gd" id="5_kmr8p"]
 
 [node name="TestLevel" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_4spf0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0547138, 0, -0.278389)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.3468, 0, -0.278389)
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.6231)
+[node name="BaseEnemy2" parent="." instance=ExtResource("2_komva")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -26.0957, -2.08364, 0)
+
+[node name="BaseEnemy3" parent="." instance=ExtResource("2_komva")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20.2931, -2.33565, 0)
+
+[node name="BaseEnemy6" parent="." instance=ExtResource("2_komva")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14.0182, 2.01359, 0)
+
+[node name="BaseEnemy4" parent="." instance=ExtResource("2_komva")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.23352, 3.58273, 0)
+
+[node name="BaseEnemy5" parent="." instance=ExtResource("2_komva")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.3945, -4.48692, 0)
+
+[node name="BaseEnemy7" parent="." instance=ExtResource("2_komva")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.8741, -3.01854, 0)
 
 [node name="BaseEnemy" parent="." instance=ExtResource("2_komva")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.25416, 0, 0.0934696)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, 0, 0)
+
+[node name="LevelCamera" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_kupa4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.3468, 0, 14.7216)
+player = NodePath("../Player")
+
+[node name="PhantomCameraHost" type="Node" parent="LevelCamera"]
+script = ExtResource("4_8crns")
+
+[node name="PhantomCamera3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.3468, 0, 14.7216)
+script = ExtResource("5_kmr8p")
+priority_override = false
+priority = 0
+follow_mode = 2
+follow_target = NodePath("../Player")
+follow_parameters/target_offset = Vector3(0, 0, 15)
+follow_parameters/damping = true
+follow_parameters/damping_value = 5.0
+look_at_mode = 0
+tween_parameters = null
+tween_on_load = false
+inactive_update_mode = 0
+camera_3D_resource = null

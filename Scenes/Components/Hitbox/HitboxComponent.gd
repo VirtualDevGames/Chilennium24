@@ -14,7 +14,3 @@ func _ready():
 func Damage(damage : int):
 	print("am being damaged")
 	health_component.Damage(damage)
-
-func _on_body_entered(body):
-	if body.has_method("Damage"):
-		body.Damage(attack_damage)
