@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://eaa3e6q6nx2g"]
+
+[ext_resource type="Texture2D" uid="uid://eebr8h8wgynv" path="res://Assets/Sprites/heart.png" id="1_bc5n1"]
+[ext_resource type="Script" path="res://Scenes/UI/InGameUI.gd" id="1_j35cu"]
+
+[node name="InGameUi" type="CanvasLayer" node_paths=PackedStringArray("hp_icons")]
+script = ExtResource("1_j35cu")
+hp_icons = [NodePath("VBoxContainer/HBoxContainer/TextureRect"), NodePath("VBoxContainer/HBoxContainer/TextureRect2"), NodePath("VBoxContainer/HBoxContainer/TextureRect3")]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Monkeys Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Monkeys
+"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_bc5n1")
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_bc5n1")
+
+[node name="TextureRect3" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_bc5n1")

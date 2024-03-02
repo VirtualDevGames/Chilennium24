@@ -12,9 +12,14 @@ var banana_projectile = preload("res://Scenes/Projectiles/BananaProjectile.tscn"
 var current_projectile = banana_projectile
 
 @onready var shoot_location = $"Shoot Location"
+@onready var invuln_timer = $"Invulnerablility Timer"
 
 var can_shoot = true
 var normal_shooting_timer_legth = 0.5
+
+@export var hp = 5
+@onready var max_hp = hp
+signal TookDamage
 
 func _physics_process(delta):
 	
@@ -47,10 +52,32 @@ func _physics_process(delta):
 		var new_projectile = (banana_projectile.instantiate()) as BaseProjectile
 		new_projectile.global_position = shoot_location.global_position
 		get_parent().add_child(new_projectile)
-
+	
+	if Input.is_action_just_pressed("Take Damage"):# && can_shoot:
+		TakeDamage(1)
+		
 	move_and_slide()
 
-
+func TakeDamage(damage : int):
+	if invuln_timer.is_stopped():
+		invuln_timer.start()
+		hp -= damage
+		TookDamage.emit()
+		# Play animation of monkeys coming down here
+		if hp >= 0:
+			pass #player is dead
 
 func _on_shooting_timer_timeout():
 	can_shoot = true
+
+
+func _on_invulnerablility_timer_timeout():
+	pass # Replace with function body.
+
+func _on_hitbox_area_entered(area):
+	if area.get_parent() is BaseEnemy:
+		var enemy = area.get_parent() as BaseEnemy
+		TakeDamage(enemy.damage)
+	elif area.get_parent() is BaseIsland:
+		TakeDamage(1)
+		

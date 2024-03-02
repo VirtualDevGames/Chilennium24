@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://t74emdt05py0"]
+[gd_scene load_steps=8 format=3 uid="uid://t74emdt05py0"]
 
 [ext_resource type="PackedScene" uid="uid://cyhkdwpdoucj4" path="res://Scenes/Characters/Player/Player.tscn" id="1_4spf0"]
 [ext_resource type="PackedScene" uid="uid://dkcggsjtr1x6t" path="res://Scenes/Characters/Enemy/BaseEnemy.tscn" id="2_komva"]
 [ext_resource type="PackedScene" uid="uid://bvduxw68cdm6g" path="res://Scenes/Camera/LevelCamera.tscn" id="3_kupa4"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_8crns"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3D.gd" id="5_kmr8p"]
+[ext_resource type="PackedScene" uid="uid://eaa3e6q6nx2g" path="res://Scenes/UI/InGameUI.tscn" id="6_ldcae"]
+[ext_resource type="PackedScene" uid="uid://cj364tf1pituh" path="res://Scenes/Obstacles/Islands/BaseIsland.tscn" id="7_kvn7x"]
 
 [node name="TestLevel" type="Node3D"]
 
@@ -54,3 +56,15 @@ tween_parameters = null
 tween_on_load = false
 inactive_update_mode = 0
 camera_3D_resource = null
+
+[node name="InGameUi" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_ldcae")]
+player = NodePath("../Player")
+
+[node name="BaseIsland" parent="." instance=ExtResource("7_kvn7x")]
+transform = Transform3D(2.83134, 0, 0, 0, 2.72646, 0, 0, 0, 1, -21.3675, 8.83655, -0.278389)
+
+[node name="BaseIsland2" parent="." instance=ExtResource("7_kvn7x")]
+transform = Transform3D(2.83134, 0, 0, 0, 2.72646, 0, 0, 0, 1, -3.9013, -7.76674, -0.278389)
+
+[node name="BaseIsland3" parent="." instance=ExtResource("7_kvn7x")]
+transform = Transform3D(2.83134, 0, 0, 0, 2.72646, 0, 0, 0, 1, 15.1827, 5.63001, -0.278389)

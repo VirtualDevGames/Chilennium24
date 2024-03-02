@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cyhkdwpdoucj4"]
+[gd_scene load_steps=12 format=3 uid="uid://cyhkdwpdoucj4"]
 
 [ext_resource type="Script" path="res://Scenes/Characters/Player/Player.gd" id="1_wpn0a"]
 [ext_resource type="Texture2D" uid="uid://hy5dnopmobtg" path="res://Assets/Test Grids/Red/texture_01.png" id="2_ppcil"]
@@ -20,9 +20,12 @@ albedo_texture = ExtResource("4_qcxva")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_svd0i"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_hv0jd"]
+
 [node name="Player" type="CharacterBody3D"]
 collision_mask = 38
 script = ExtResource("1_wpn0a")
+hp = 3
 
 [node name="Head" type="CSGBox3D" parent="."]
 material = SubResource("StandardMaterial3D_bfrhh")
@@ -61,4 +64,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.300677, -1.71566, 0)
 
 [node name="Shooting Timer" type="Timer" parent="."]
 
+[node name="Invulnerablility Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Hitbox" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+shape = SubResource("BoxShape3D_hv0jd")
+
 [connection signal="timeout" from="Shooting Timer" to="." method="_on_shooting_timer_timeout"]
+[connection signal="timeout" from="Invulnerablility Timer" to="." method="_on_invulnerablility_timer_timeout"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
