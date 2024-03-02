@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cj364tf1pituh"]
+[gd_scene load_steps=8 format=3 uid="uid://cj364tf1pituh"]
 
 [ext_resource type="Script" path="res://Scenes/Obstacles/Islands/BaseIsland.gd" id="1_7m54w"]
 [ext_resource type="Texture2D" uid="uid://c7ks4lubwjoy3" path="res://Assets/Test Grids/Green/texture_04.png" id="1_ngcq4"]
@@ -11,25 +11,30 @@ albedo_texture = ExtResource("1_ngcq4")
 albedo_texture = ExtResource("2_wwyfj")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_paf1o"]
+size = Vector3(1, 1, 1.2804)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v7od1"]
 
 [node name="BaseIsland" type="StaticBody3D"]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 0, 0, 0)
 collision_layer = 2
 collision_mask = 49
 script = ExtResource("1_7m54w")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 1.4, 0, 0, 0)
 material = SubResource("StandardMaterial3D_x4lg2")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(1.14253, 0, 0, 0, 0.348684, 0, 0, 0, 1.0991, 0, 0.33641, 0)
+transform = Transform3D(0.7, 0, 0, 0, 0.349, 0, 0, 0, 1.8, 0, 0.33641, 0)
 material = SubResource("StandardMaterial3D_qfleh")
 
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.62716, 0, 0, 0)
 shape = SubResource("BoxShape3D_paf1o")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
-shape = SubResource("BoxShape3D_paf1o")
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 2.07398, 0, 0, -7.47591e-05)
+shape = SubResource("BoxShape3D_v7od1")

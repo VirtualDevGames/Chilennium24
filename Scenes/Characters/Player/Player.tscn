@@ -62,17 +62,22 @@ transform = Transform3D(0.305, 0, 0, 0, 0.305, 0, 0, 0, 0.305, -0.014, -1.49733,
 [node name="Shoot Location" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.300677, -1.71566, 0)
 
-[node name="Shooting Timer" type="Timer" parent="."]
-
-[node name="Invulnerablility Timer" type="Timer" parent="."]
-one_shot = true
-
 [node name="Hitbox" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
 shape = SubResource("BoxShape3D_hv0jd")
 
+[node name="Shooting Timer" type="Timer" parent="."]
+
+[node name="Invulnerablility Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Can Move Timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="timeout" from="Shooting Timer" to="." method="_on_shooting_timer_timeout"]
 [connection signal="timeout" from="Invulnerablility Timer" to="." method="_on_invulnerablility_timer_timeout"]
-[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="timeout" from="Can Move Timer" to="." method="_on_can_move_timer_timeout"]

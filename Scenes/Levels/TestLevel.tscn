@@ -1,14 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://t74emdt05py0"]
+[gd_scene load_steps=10 format=3 uid="uid://t74emdt05py0"]
 
 [ext_resource type="PackedScene" uid="uid://cyhkdwpdoucj4" path="res://Scenes/Characters/Player/Player.tscn" id="1_4spf0"]
+[ext_resource type="Script" path="res://Scenes/Levels/GameManager.gd" id="1_evwrm"]
 [ext_resource type="PackedScene" uid="uid://dkcggsjtr1x6t" path="res://Scenes/Characters/Enemy/BaseEnemy.tscn" id="2_komva"]
 [ext_resource type="PackedScene" uid="uid://bvduxw68cdm6g" path="res://Scenes/Camera/LevelCamera.tscn" id="3_kupa4"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_8crns"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3D.gd" id="5_kmr8p"]
 [ext_resource type="PackedScene" uid="uid://eaa3e6q6nx2g" path="res://Scenes/UI/InGameUI.tscn" id="6_ldcae"]
 [ext_resource type="PackedScene" uid="uid://cj364tf1pituh" path="res://Scenes/Obstacles/Islands/BaseIsland.tscn" id="7_kvn7x"]
+[ext_resource type="PackedScene" uid="uid://ls5np6o8qiw8" path="res://Scenes/Auto Scroller/AutoScroller.tscn" id="9_vtjwl"]
 
 [node name="TestLevel" type="Node3D"]
+script = ExtResource("1_evwrm")
 
 [node name="Player" parent="." instance=ExtResource("1_4spf0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.3468, 0, -0.278389)
@@ -35,19 +38,19 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.874
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, 0, 0)
 
 [node name="LevelCamera" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_kupa4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.3468, 0, 14.7216)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.1602, 0, 15)
 player = NodePath("../Player")
 
 [node name="PhantomCameraHost" type="Node" parent="LevelCamera"]
 script = ExtResource("4_8crns")
 
 [node name="PhantomCamera3D" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.3468, 0, 14.7216)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.1602, 0, 15)
 script = ExtResource("5_kmr8p")
 priority_override = false
 priority = 0
 follow_mode = 2
-follow_target = NodePath("../Player")
+follow_target = NodePath("../AutoScroller")
 follow_parameters/target_offset = Vector3(0, 0, 15)
 follow_parameters/damping = true
 follow_parameters/damping_value = 5.0
@@ -61,10 +64,13 @@ camera_3D_resource = null
 player = NodePath("../Player")
 
 [node name="BaseIsland" parent="." instance=ExtResource("7_kvn7x")]
-transform = Transform3D(2.83134, 0, 0, 0, 2.72646, 0, 0, 0, 1, -21.3675, 8.83655, -0.278389)
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, -25.41, 8.45127, 0)
 
 [node name="BaseIsland2" parent="." instance=ExtResource("7_kvn7x")]
-transform = Transform3D(2.83134, 0, 0, 0, 2.72646, 0, 0, 0, 1, -3.9013, -7.76674, -0.278389)
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, -8.55089, -8.43784, -1.90735e-06)
 
 [node name="BaseIsland3" parent="." instance=ExtResource("7_kvn7x")]
-transform = Transform3D(2.83134, 0, 0, 0, 2.72646, 0, 0, 0, 1, 15.1827, 5.63001, -0.278389)
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 5.36333, 7.8662, 0)
+
+[node name="AutoScroller" parent="." instance=ExtResource("9_vtjwl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.1602, 0, 0)

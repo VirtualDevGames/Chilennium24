@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ls5np6o8qiw8"]
+
+[ext_resource type="Script" path="res://Scenes/Auto Scroller/AutoScroller.gd" id="1_y4m1t"]
+
+[node name="AutoScroller" type="Node3D"]
+script = ExtResource("1_y4m1t")

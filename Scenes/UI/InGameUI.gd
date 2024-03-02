@@ -13,7 +13,6 @@ func UpdateMonkeys():
 	for hp in player.hp:
 		hp_icons[hp - 1].visible = true
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass

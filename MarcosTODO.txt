@@ -6,3 +6,4 @@ IMPORTANT:
 
 AFTER:
 - Make sure camera follow player properly
+- Camera not jitter when following player
