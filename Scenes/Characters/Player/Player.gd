@@ -20,6 +20,7 @@ var current_projectile = banana_projectile
 @onready var animation_player = $AnimationPlayer
 
 @onready var shoot_sfx = $"Shoot SFX"
+@onready var coin_grab = $"Collect Coin"
 
 var can_shoot = true
 var can_move = true
@@ -146,6 +147,8 @@ func _on_hitbox_area_entered(area):
 	if area.get_parent() is CollectableBanana:
 		var banana = area.get_parent() as CollectableBanana
 		GrabbedBanana.emit(banana.value)
+		banana.queue_free()
+		coin_grab.play()
 		return
 	if area.get_parent() is BaseEnemy:
 		var enemy = area.get_parent() as BaseEnemy

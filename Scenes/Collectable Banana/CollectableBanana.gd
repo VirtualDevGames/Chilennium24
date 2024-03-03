@@ -3,6 +3,7 @@ class_name CollectableBanana
 
 @export var type : BananaType
 @export var images:Array[Resource]
+@onready var model = $Model
 
 var value = 0
 var small_value = 1
@@ -19,3 +20,4 @@ func _ready():
 			value = small_value
 		BananaType.Large:
 			value = large_value
+

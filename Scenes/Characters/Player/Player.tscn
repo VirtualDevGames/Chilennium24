@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cyhkdwpdoucj4"]
+[gd_scene load_steps=20 format=3 uid="uid://cyhkdwpdoucj4"]
 
 [ext_resource type="Script" path="res://Scenes/Characters/Player/Player.gd" id="1_wpn0a"]
 [ext_resource type="Texture2D" uid="uid://hy5dnopmobtg" path="res://Assets/Test Grids/Red/texture_01.png" id="2_ppcil"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://1s1hy31yra8" path="res://Scenes/Characters/Monkey/Monkey.tscn" id="5_itwcv"]
 [ext_resource type="AudioStream" uid="uid://bgelewtm6n0el" path="res://Assets/Audio/SFX/pop_sfx.ogg" id="6_drprm"]
 [ext_resource type="PackedScene" uid="uid://duf86d76qstre" path="res://Assets/models/coconutCopter/Colored/Copter1.tscn" id="7_7kfm1"]
+[ext_resource type="AudioStream" uid="uid://dtttouqv81g88" path="res://Assets/Audio/SFX/collect_cion.ogg" id="10_qod2r"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bfrhh"]
 albedo_texture = ExtResource("2_ppcil")
@@ -190,6 +191,7 @@ one_shot = true
 
 [node name="Shoot SFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_drprm")
+volume_db = -10.0
 bus = &"SFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -197,6 +199,11 @@ libraries = {
 "": SubResource("AnimationLibrary_ox2s3")
 }
 autoplay = "Flying"
+
+[node name="Collect Coin" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("10_qod2r")
+volume_db = -2.0
+bus = &"SFX"
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="timeout" from="Shooting Timer" to="." method="_on_shooting_timer_timeout"]

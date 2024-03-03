@@ -27,7 +27,7 @@ shape = SubResource("SphereShape3D_x18h0")
 
 [node name="Splat SFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_bsluf")
-volume_db = 6.0
+volume_db = -5.0
 bus = &"SFX"
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
