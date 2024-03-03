@@ -70,6 +70,8 @@ transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
 shape = SubResource("BoxShape3D_hv0jd")
 
 [node name="Shooting Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
 
 [node name="Invulnerablility Timer" type="Timer" parent="."]
 one_shot = true
