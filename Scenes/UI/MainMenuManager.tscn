@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://uvneydv4qsh4"]
+[gd_scene load_steps=15 format=3 uid="uid://uvneydv4qsh4"]
 
 [ext_resource type="Script" path="res://Scenes/UI/MainMenuManager.gd" id="1_cj6sm"]
+[ext_resource type="PackedScene" uid="uid://yig4mivt1cgh" path="res://Scenes/UI/TransitionFade.tscn" id="2_kbrr2"]
 [ext_resource type="PackedScene" uid="uid://b114ssh3icr42" path="res://Assets/Sprites/UI/MenuButton/MenuButton.tscn" id="2_srk5q"]
 [ext_resource type="Texture2D" uid="uid://ch23fplueb732" path="res://Assets/Sprites/buttons_4x.png" id="2_xpbew"]
 [ext_resource type="Script" path="res://Scripts/LevelSelectManager.gd" id="4_4scid"]
@@ -111,8 +112,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 8064.0
-offset_bottom = 4536.0
+offset_right = 11520.0
+offset_bottom = 6480.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -122,8 +123,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -5760.0
-offset_bottom = -3238.0
+offset_right = -10368.0
+offset_bottom = -5830.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -205,6 +206,7 @@ texture_hover = SubResource("AtlasTexture_jgaf6")
 texture_disabled = SubResource("AtlasTexture_jgaf6")
 texture_focused = SubResource("AtlasTexture_jgaf6")
 level_name = "Morning"
+level_path = "res://Scenes/Levels/TestLevel.tscn"
 
 [node name="TextureRect" type="TextureRect" parent="All Control/Level Screen/VBoxContainer/HBoxContainer/LevelButton"]
 visible = false
@@ -290,6 +292,8 @@ offset_bottom = 615.0
 texture_normal = SubResource("AtlasTexture_jgaf6")
 move_direction = 6
 button_text = "Back"
+
+[node name="FadeToBlack" parent="." instance=ExtResource("2_kbrr2")]
 
 [node name="Control Mover" type="AnimationPlayer" parent="."]
 libraries = {

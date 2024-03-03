@@ -97,9 +97,7 @@ func _physics_process(delta):
 			floaty_force = 1
 		
 		var lerp_force = .05
-		#print(lerp(velocity.x, level_speed, lerp_force))
 		if (velocity.x > level_speed + .005) || (velocity.x < level_speed + .005):# && lerp_after_movement:
-			#print("lerping")
 			velocity.x = lerp(velocity.x, level_speed, lerp_force)# velocity.x += level_speed
 		else:
 			lerp_after_movement = false
@@ -129,17 +127,22 @@ func TakeDamage(damage : int):
 		hp -= damage
 		TookDamage.emit()
 		# Play animation of monkeys coming down here
-		if hp >= 0:
-			pass #player is dead
+		if hp <= 0:
+			#TransitionSignals.LevelCleared.emit()
+			get_tree().change_scene_to_file("res://Scenes/UI/MainMenuManager.tscn")
 
 func _on_shooting_timer_timeout():
-	print("ba ba")
 	can_shoot = true
 
 func _on_invulnerablility_timer_timeout():
 	pass # Replace with function body.
 
 func _on_hitbox_area_entered(area):
+	if area.get_parent() is Goal:
+		TransitionSignals.LevelCleared.emit()
+		can_move = false
+	if area.get_parent() is BaseProjectile:
+		return
 	if area.get_parent() is CollectableBanana:
 		var banana = area.get_parent() as CollectableBanana
 		GrabbedBanana.emit(banana.value)

@@ -92,6 +92,7 @@ Back={
 3d_physics/layer_5="Player Projectile"
 3d_physics/layer_6="Enemy Projectile"
 3d_physics/layer_7="Outer Bounds"
+3d_physics/layer_8="Goal"
 
 [physics]
 

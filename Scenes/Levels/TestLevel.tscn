@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://t74emdt05py0"]
+[gd_scene load_steps=13 format=3 uid="uid://t74emdt05py0"]
 
 [ext_resource type="PackedScene" uid="uid://cyhkdwpdoucj4" path="res://Scenes/Characters/Player/Player.tscn" id="1_4spf0"]
 [ext_resource type="Script" path="res://Scenes/Levels/GameManager.gd" id="1_evwrm"]
+[ext_resource type="PackedScene" uid="uid://yig4mivt1cgh" path="res://Scenes/UI/TransitionFade.tscn" id="2_lqlbp"]
 [ext_resource type="PackedScene" uid="uid://bvduxw68cdm6g" path="res://Scenes/Camera/LevelCamera.tscn" id="3_kupa4"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_8crns"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3D.gd" id="5_kmr8p"]
@@ -14,6 +15,8 @@
 
 [node name="TestLevel" type="Node3D"]
 script = ExtResource("1_evwrm")
+
+[node name="FadeToBlack" parent="." instance=ExtResource("2_lqlbp")]
 
 [node name="Player" parent="." instance=ExtResource("1_4spf0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.5197, 0, -0.278389)

@@ -17,7 +17,7 @@ func UpdateMonkeys():
 		hp_icons[hp - 1].visible = true
 
 func UpdateBananas(value : int):
-	print(value)
+	print("WHY ARE YOU AS A MAN 5")
 	banana_counter += value 
 	banana_counter_label.text = str(banana_counter)
 

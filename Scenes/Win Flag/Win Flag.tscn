@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ft08kjbi0q4t"]
+
+[ext_resource type="Script" path="res://Scenes/Win Flag/Win Flag.gd" id="1_l2bmw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wjthr"]
+size = Vector3(1, 58.69, 1)
+
+[node name="WinFlag" type="Node3D"]
+script = ExtResource("1_l2bmw")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(6.96387, 0, 0, 0, 6.96387, 0, 0, 0, 6.96387, 0, 0, 0)
+text = "Goal!"
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.183485, 0)
+shape = SubResource("BoxShape3D_wjthr")

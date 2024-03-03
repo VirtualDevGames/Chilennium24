@@ -1,12 +1,127 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkcggsjtr1x6t"]
+[gd_scene load_steps=13 format=3 uid="uid://dkcggsjtr1x6t"]
 
 [ext_resource type="Script" path="res://Scenes/Characters/Enemy/BaseEnemy.gd" id="1_iqsdr"]
+[ext_resource type="PackedScene" uid="uid://dennaqjiujhin" path="res://Assets/Eagles/Eagles colored/Eagle1.tscn" id="2_4ywig"]
 [ext_resource type="Texture2D" uid="uid://cgu4eqqbe8eyj" path="res://Assets/Test Grids/Red/texture_02.png" id="2_v27aw"]
+[ext_resource type="PackedScene" uid="uid://bgs8nuo83dpg6" path="res://Assets/Eagles/Eagles colored/Eagle2.tscn" id="3_g7vvc"]
+[ext_resource type="PackedScene" uid="uid://cri6t03lypjgp" path="res://Assets/Eagles/Eagles colored/Eagle3.tscn" id="4_m6lmh"]
+[ext_resource type="PackedScene" uid="uid://bfyxns4nyixvf" path="res://Assets/Eagles/Eagles colored/Eagle4.tscn" id="5_2gcf7"]
+[ext_resource type="PackedScene" uid="uid://dqleoj4mlpg85" path="res://Assets/Eagles/Eagle_Frame05.fbx" id="6_052i7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_onnka"]
 albedo_texture = ExtResource("2_v27aw")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r01q6"]
+
+[sub_resource type="Animation" id="Animation_5kbqg"]
+resource_name = "Flying"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/Top:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.4, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/Root Scene6:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node3D/Root Scene8:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node3D/Root Scene7:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_opbuw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/Top:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/Root Scene6:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node3D/Root Scene8:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node3D/Root Scene7:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rbc0j"]
+_data = {
+"Flying": SubResource("Animation_5kbqg"),
+"RESET": SubResource("Animation_opbuw")
+}
 
 [node name="BaseEnemy" type="RigidBody3D"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
@@ -16,7 +131,23 @@ gravity_scale = 0.0
 script = ExtResource("1_iqsdr")
 max_hp = 1
 
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(9.95491, 0, -0.948554, 0, 10, 0, 0.948554, 0, 9.95491, 0, -0.992849, 0)
+
+[node name="Top" parent="Node3D" instance=ExtResource("2_4ywig")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0230815, 0.0563409, -0.0474922)
+
+[node name="Root Scene6" parent="Node3D" instance=ExtResource("3_g7vvc")]
+
+[node name="Root Scene7" parent="Node3D" instance=ExtResource("4_m6lmh")]
+
+[node name="Root Scene8" parent="Node3D" instance=ExtResource("5_2gcf7")]
+
+[node name="Root Scene" parent="." instance=ExtResource("6_052i7")]
+visible = false
+
 [node name="Body" type="CSGBox3D" parent="."]
+visible = false
 material = SubResource("StandardMaterial3D_onnka")
 
 [node name="Eye" type="CSGSphere3D" parent="Body"]
@@ -30,3 +161,9 @@ transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_r01q6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rbc0j")
+}
+autoplay = "Flying"
