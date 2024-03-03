@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdfak0xo3rw76"]
+
+[ext_resource type="PackedScene" uid="uid://b44ax8n2xmy8v" path="res://Assets/models/tiger/dead/Tiger_PoseDead (1).fbx" id="1_70a3s"]
+[ext_resource type="Texture2D" uid="uid://cn5xquvbrhuue" path="res://Assets/models/tiger/dead/fdkhasjkhdjk_tigerDead_BaseColor.png" id="2_ij646"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_esq3s"]
+albedo_texture = ExtResource("2_ij646")
+
+[node name="Root Scene" instance=ExtResource("1_70a3s")]
+
+[node name="pCylinder34" parent="RootNode/master/geo1" index="0"]
+material_override = SubResource("StandardMaterial3D_esq3s")
+
+[node name="pCylinder32" parent="RootNode/master/geo1" index="1"]
+material_override = SubResource("StandardMaterial3D_esq3s")
+
+[node name="pCylinder39" parent="RootNode/master/geo1" index="2"]
+material_override = SubResource("StandardMaterial3D_esq3s")
+
+[node name="pCylinder40" parent="RootNode/master/geo1" index="3"]
+material_override = SubResource("StandardMaterial3D_esq3s")
+
+[node name="pSphere18" parent="RootNode/master/geo1" index="4"]
+material_override = SubResource("StandardMaterial3D_esq3s")
+
+[node name="pCylinder38" parent="RootNode/master/geo1" index="5"]
+material_override = SubResource("StandardMaterial3D_esq3s")
+
+[node name="pCylinder41" parent="RootNode/master/geo1" index="6"]
+material_override = SubResource("StandardMaterial3D_esq3s")
+
+[node name="pSphere23" parent="RootNode/master/geo1" index="7"]
+material_override = SubResource("StandardMaterial3D_esq3s")
+
+[node name="pSphere22" parent="RootNode/master/geo1" index="8"]
+material_override = SubResource("StandardMaterial3D_esq3s")
+
+[node name="pSphere24" parent="RootNode/master/geo1" index="9"]
+material_override = SubResource("StandardMaterial3D_esq3s")
+
+[node name="pCylinder35" parent="RootNode/master/geo1" index="10"]
+material_override = SubResource("StandardMaterial3D_esq3s")
+
+[node name="pSphere21" parent="RootNode/master/geo1" index="11"]
+material_override = SubResource("StandardMaterial3D_esq3s")
+
+[node name="pSphere20" parent="RootNode/master/geo1" index="12"]
+material_override = SubResource("StandardMaterial3D_esq3s")

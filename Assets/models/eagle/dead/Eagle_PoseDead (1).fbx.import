@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://clmkud2d0jirr"
-path="res://.godot/imported/Tiger_PoseDead.fbx-3a70264338b23db42a43e55a4fa807e9.scn"
+uid="uid://b72r6o8u04frg"
+path="res://.godot/imported/Eagle_PoseDead (1).fbx-cc45ffceb0bc0f60367a7f181d1fa6cf.scn"
 
 [deps]
 
-source_file="res://Assets/models/tiger/dead/Tiger_PoseDead.fbx"
-dest_files=["res://.godot/imported/Tiger_PoseDead.fbx-3a70264338b23db42a43e55a4fa807e9.scn"]
+source_file="res://Assets/models/eagle/dead/Eagle_PoseDead (1).fbx"
+dest_files=["res://.godot/imported/Eagle_PoseDead (1).fbx-cc45ffceb0bc0f60367a7f181d1fa6cf.scn"]
 
 [params]
 
