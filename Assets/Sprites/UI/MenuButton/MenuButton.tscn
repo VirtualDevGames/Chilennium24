@@ -1,11 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://b114ssh3icr42"]
 
 [ext_resource type="Script" path="res://Assets/Sprites/UI/MenuButton/MenuButton.gd" id="1_oya7s"]
+[ext_resource type="Texture2D" uid="uid://c6s8c3uguqrkh" path="res://Assets/buttons/play_on.png" id="1_sfwmf"]
 [ext_resource type="Texture2D" uid="uid://ch23fplueb732" path="res://Assets/Sprites/buttons_4x.png" id="1_wpx6f"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6ubj2"]
-atlas = ExtResource("1_wpx6f")
-region = Rect2(131, 5, 90, 56)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ik1od"]
 atlas = ExtResource("1_wpx6f")
@@ -24,11 +21,13 @@ atlas = ExtResource("1_wpx6f")
 region = Rect2(131, 5, 90, 56)
 
 [node name="MenuButton" type="TextureButton"]
-texture_normal = SubResource("AtlasTexture_6ubj2")
+scale = Vector2(0.00435116, 0.00435116)
+texture_normal = ExtResource("1_sfwmf")
 texture_pressed = SubResource("AtlasTexture_ik1od")
 texture_hover = SubResource("AtlasTexture_v8ijr")
 texture_disabled = SubResource("AtlasTexture_osjil")
 texture_focused = SubResource("AtlasTexture_0e5w2")
+ignore_texture_size = true
 script = ExtResource("1_oya7s")
 
 [node name="Label" type="Label" parent="."]

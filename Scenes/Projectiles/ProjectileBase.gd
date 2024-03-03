@@ -5,6 +5,7 @@ const speed = 30
 @export var attack = 1
 
 @onready var sfx_player = $"Splat SFX"
+@onready var hitbox = $Hitbox
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,7 +23,7 @@ func _on_hitbox_area_entered(area):
 		enemy.Damage(attack)
 		sfx_player.play()
 		visible = false
-
+		hitbox.queue_free()
 
 func _on_splat_sfx_finished():
 	queue_free()

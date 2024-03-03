@@ -12,6 +12,9 @@ albedo_texture = ExtResource("3_uyhmd")
 
 [node name="Root Scene" instance=ExtResource("1_84fxu")]
 
+[node name="master1" parent="RootNode" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0966566, -0.042632)
+
 [node name="monkeyBody" parent="RootNode/master1/geo/monkey_GRP" index="0"]
 material_override = SubResource("StandardMaterial3D_8ssfm")
 
@@ -47,6 +50,9 @@ material_override = SubResource("StandardMaterial3D_8ssfm")
 
 [node name="monkeyHead" parent="RootNode/master1/geo/monkey_GRP" index="11"]
 material_override = SubResource("StandardMaterial3D_8ssfm")
+
+[node name="bannaGun" parent="RootNode" index="1"]
+transform = Transform3D(0.432664, 0, 0, 0, 0.432664, 0, 0, 0, 0.432664, 0.0400276, 0.00443584, -0.000643948)
 
 [node name="pCube10" parent="RootNode/bannaGun" index="0"]
 material_override = SubResource("StandardMaterial3D_g38tm")
