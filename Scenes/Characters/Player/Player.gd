@@ -16,6 +16,7 @@ var current_projectile = banana_projectile
 @onready var shoot_location = $"Shoot Location"
 @onready var invuln_timer = $"Invulnerablility Timer"
 @onready var can_move_timer = $"Can Move Timer"
+@onready var shooting_timer = $"Shooting Timer"
 
 @onready var shoot_sfx = $"Shoot SFX"
 
@@ -106,12 +107,14 @@ func _physics_process(delta):
 		if (velocity.y > 0) || (velocity.y < 0):
 			velocity.y = lerp(velocity.y, 0.05, lerp_force)
 	
-	if Input.is_action_just_pressed("Shoot"):# && can_shoot:
-		can_shoot = false
-		var new_projectile = (banana_projectile.instantiate()) as BaseProjectile
-		get_parent().add_child(new_projectile)
-		new_projectile.global_position = shoot_location.global_position
-		shoot_sfx.play()
+	if Input.is_action_pressed("Shoot"):# && can_shoot:
+		if can_shoot:
+			can_shoot = false
+			shooting_timer.start()
+			var new_projectile = (banana_projectile.instantiate()) as BaseProjectile
+			get_parent().add_child(new_projectile)
+			new_projectile.global_position = shoot_location.global_position
+			shoot_sfx.play()
 	
 	#if Input.is_action_just_pressed("Take Damage"):# && can_shoot:
 	#	TakeDamage(1)
@@ -128,6 +131,7 @@ func TakeDamage(damage : int):
 			pass #player is dead
 
 func _on_shooting_timer_timeout():
+	print("ba ba")
 	can_shoot = true
 
 func _on_invulnerablility_timer_timeout():
