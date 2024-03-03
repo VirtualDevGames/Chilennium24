@@ -14,14 +14,11 @@ enum Direction {
 
 var menu_animations : AnimationPlayer
 var menu : MainMenuManager
-@onready var label = $Label
-@onready var sfx_menu_select = $"MenuSound"
 @export var move_direction : Direction
 @export var button_text : String
 @export var font_size : int
 
 func _ready():
-	label.text = button_text
 	menu = get_tree().root.get_node("MainMenu") as MainMenuManager
 	menu_animations = menu.menu_animations
 

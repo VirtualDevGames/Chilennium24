@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://cri6t03lypjgp"]
+
+[ext_resource type="PackedScene" uid="uid://7hghj0yhbbc4" path="res://Assets/Eagles/Eagle_Frame03.fbx" id="1_j6m64"]
+[ext_resource type="Texture2D" uid="uid://syslpm0gr6f3" path="res://Assets/models/eagle/live/shitttttttttttttttttttttttttttttttttttt_eagleLive_BaseColor.png" id="2_jukic"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_chosk"]
+albedo_texture = ExtResource("2_jukic")
+
+[node name="Root Scene" instance=ExtResource("1_j6m64")]
+
+[node name="headEagle" parent="RootNode/Eagle_GRP1" index="0"]
+material_override = SubResource("StandardMaterial3D_chosk")
+
+[node name="topBeak" parent="RootNode/Eagle_GRP1" index="1"]
+material_override = SubResource("StandardMaterial3D_chosk")
+
+[node name="rightWing" parent="RootNode/Eagle_GRP1" index="2"]
+material_override = SubResource("StandardMaterial3D_chosk")
+
+[node name="leftWing" parent="RootNode/Eagle_GRP1" index="3"]
+material_override = SubResource("StandardMaterial3D_chosk")
+
+[node name="leftTail" parent="RootNode/Eagle_GRP1" index="4"]
+material_override = SubResource("StandardMaterial3D_chosk")
+
+[node name="rightTail" parent="RootNode/Eagle_GRP1" index="5"]
+material_override = SubResource("StandardMaterial3D_chosk")
+
+[node name="middleTail" parent="RootNode/Eagle_GRP1" index="6"]
+material_override = SubResource("StandardMaterial3D_chosk")
+
+[node name="leftLeg" parent="RootNode/Eagle_GRP1" index="7"]
+material_override = SubResource("StandardMaterial3D_chosk")
+
+[node name="leftTalons" parent="RootNode/Eagle_GRP1" index="8"]
+material_override = SubResource("StandardMaterial3D_chosk")
+
+[node name="rightTalons" parent="RootNode/Eagle_GRP1" index="9"]
+material_override = SubResource("StandardMaterial3D_chosk")
+
+[node name="rightLeg" parent="RootNode/Eagle_GRP1" index="10"]
+material_override = SubResource("StandardMaterial3D_chosk")
+
+[node name="bottomBeak" parent="RootNode/Eagle_GRP1" index="11"]
+material_override = SubResource("StandardMaterial3D_chosk")
+
+[node name="neckEagle" parent="RootNode/Eagle_GRP1" index="12"]
+material_override = SubResource("StandardMaterial3D_chosk")
+
+[node name="bodyEagle" parent="RootNode/Eagle_GRP1" index="13"]
+material_override = SubResource("StandardMaterial3D_chosk")

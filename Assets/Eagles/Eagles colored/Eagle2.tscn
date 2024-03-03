@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgs8nuo83dpg6"]
+
+[ext_resource type="PackedScene" uid="uid://bbdvpqb1yjbth" path="res://Assets/Eagles/Eagle_Frame02.fbx" id="1_arncc"]
+[ext_resource type="Texture2D" uid="uid://syslpm0gr6f3" path="res://Assets/models/eagle/live/shitttttttttttttttttttttttttttttttttttt_eagleLive_BaseColor.png" id="2_5bhxr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bxalf"]
+albedo_texture = ExtResource("2_5bhxr")
+
+[node name="Root Scene" instance=ExtResource("1_arncc")]
+
+[node name="headEagle" parent="RootNode/Eagle_GRP3" index="0"]
+material_override = SubResource("StandardMaterial3D_bxalf")
+
+[node name="topBeak" parent="RootNode/Eagle_GRP3" index="1"]
+material_override = SubResource("StandardMaterial3D_bxalf")
+
+[node name="rightWing" parent="RootNode/Eagle_GRP3" index="2"]
+material_override = SubResource("StandardMaterial3D_bxalf")
+
+[node name="leftWing" parent="RootNode/Eagle_GRP3" index="3"]
+material_override = SubResource("StandardMaterial3D_bxalf")
+
+[node name="leftTail" parent="RootNode/Eagle_GRP3" index="4"]
+material_override = SubResource("StandardMaterial3D_bxalf")
+
+[node name="rightTail" parent="RootNode/Eagle_GRP3" index="5"]
+material_override = SubResource("StandardMaterial3D_bxalf")
+
+[node name="middleTail" parent="RootNode/Eagle_GRP3" index="6"]
+material_override = SubResource("StandardMaterial3D_bxalf")
+
+[node name="leftLeg" parent="RootNode/Eagle_GRP3" index="7"]
+material_override = SubResource("StandardMaterial3D_bxalf")
+
+[node name="leftTalons" parent="RootNode/Eagle_GRP3" index="8"]
+material_override = SubResource("StandardMaterial3D_bxalf")
+
+[node name="rightTalons" parent="RootNode/Eagle_GRP3" index="9"]
+material_override = SubResource("StandardMaterial3D_bxalf")
+
+[node name="rightLeg" parent="RootNode/Eagle_GRP3" index="10"]
+material_override = SubResource("StandardMaterial3D_bxalf")
+
+[node name="bottomBeak" parent="RootNode/Eagle_GRP3" index="11"]
+material_override = SubResource("StandardMaterial3D_bxalf")
+
+[node name="neckEagle" parent="RootNode/Eagle_GRP3" index="12"]
+material_override = SubResource("StandardMaterial3D_bxalf")
+
+[node name="bodyEagle" parent="RootNode/Eagle_GRP3" index="13"]
+material_override = SubResource("StandardMaterial3D_bxalf")

@@ -14,7 +14,7 @@ func ConnectTransitionSignals():
 
 func TransitionToLevel(level_path : String):
 	print("HELLOOOO FROM HERE")
-	if !is_transitioning && (level_path != null) :
+	if (level_path != null) :
 		is_transitioning = true
 		TransitionSignals.FadeToBlack.emit()
 		await TransitionSignals.FadeToBlackFinished
