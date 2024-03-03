@@ -3,7 +3,7 @@ class_name Player
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
-var level_speed = 5
+var level_speed = 5.0
 var acceleration = 1
 var deceleration = 0.5
 
@@ -39,6 +39,7 @@ var floaty_vector : Vector2
 var base_floaty_force = 500
 var floaty_force = base_floaty_force
 var floaty_decrease = -25
+var lerp_after_movement = false
 
 func _ready():
 	if game_manager:
@@ -65,34 +66,45 @@ func _physics_process(delta):
 			rotation_degrees.z = -10
 		
 		if direction.x < 0:
-			#velocity.x = direction.x * SPEED * 1.2
-			velocity.x = min(velocity.x + acceleration, SPEED)
+			velocity.x = direction.x * SPEED * 1.2
+			#velocity.x = min(velocity.x + acceleration, SPEED)
 		else:
-			#velocity.x = direction.x * SPEED
-			velocity.x = max(velocity.x + acceleration, SPEED)
-		velocity.y = -direction.z * SPEED
+			velocity.x = direction.x * SPEED
+			#velocity.x = max(velocity.x + acceleration, SPEED)
+		if(direction.z > .5) || (direction.z < .5):
+			velocity.y = -direction.z * SPEED
 		
 		floaty_vector = Vector2(velocity.x * delta, velocity.y * delta)
 		## Move player along auto-scroll
 		velocity.x += level_speed
 		floaty_force = base_floaty_force
+		lerp_after_movement = true
 	else:
 		rotation_degrees.z = 0
-		velocity.x = (direction.x * level_speed)
-		velocity.y = -move_toward(velocity.z, 0, SPEED)
+		#velocity.x = (direction.x * level_speed)
+		#velocity.y = -move_toward(velocity.z, 0, SPEED)
 		## Move player along auto scroll with float
 		
-		velocity.x = (-floaty_vector.x * delta) * (floaty_force * delta)
-		velocity.y = (-floaty_vector.y * delta) * (floaty_force * delta)
+		#velocity.x = (-floaty_vector.x * delta) * (floaty_force * delta)
+		#velocity.y = (-floaty_vector.y * delta) * (floaty_force * delta)
 		
 		if floaty_force + floaty_decrease > 1:
 			floaty_force += floaty_decrease
-		print(velocity.x)
 		if floaty_force <= 1:
 			floaty_force = 1
 		
-		velocity.x += level_speed
-	#velocity.x += level_speed# * delta
+		var lerp_force = .05
+		#print(lerp(velocity.x, level_speed, lerp_force))
+		if (velocity.x > level_speed + .005) || (velocity.x < level_speed + .005):# && lerp_after_movement:
+			#print("lerping")
+			velocity.x = lerp(velocity.x, level_speed, lerp_force)# velocity.x += level_speed
+		else:
+			lerp_after_movement = false
+			#velocity.x = (direction.x * level_speed)
+			velocity.x = level_speed# * delta
+		
+		if (velocity.y > 0) || (velocity.y < 0):
+			velocity.y = lerp(velocity.y, 0.05, lerp_force)
 	
 	if Input.is_action_just_pressed("Shoot"):# && can_shoot:
 		can_shoot = false

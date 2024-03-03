@@ -21,3 +21,8 @@ func _on_hitbox_area_entered(area):
 		enemy.TestFunc()
 		enemy.Damage(attack)
 		sfx_player.play()
+		visible = false
+
+
+func _on_splat_sfx_finished():
+	queue_free()
