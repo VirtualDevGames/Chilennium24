@@ -23,6 +23,7 @@ var normal_shooting_timer_legth = 0.5
 @export var hp = 5
 @onready var max_hp = hp
 
+signal GrabbedBanana
 signal TookDamage
 var damaged_vector : Vector2
 var base_knockback_force = 500
@@ -52,8 +53,11 @@ func _physics_process(delta):
 			rotation_degrees.z = 10
 		elif direction.x > 0:
 			rotation_degrees.z = -10
-			
-		velocity.x = direction.x * SPEED
+		
+		if direction.x < 0:
+			velocity.x = direction.x * SPEED * 1.2
+		else:
+			velocity.x = direction.x * SPEED
 		velocity.y = -direction.z * SPEED
 	else:
 		rotation_degrees.z = 0
@@ -89,6 +93,10 @@ func _on_invulnerablility_timer_timeout():
 	pass # Replace with function body.
 
 func _on_hitbox_area_entered(area):
+	if area.get_parent() is CollectableBanana:
+		var banana = area.get_parent() as CollectableBanana
+		GrabbedBanana.emit(banana.value)
+		return
 	if area.get_parent() is BaseEnemy:
 		var enemy = area.get_parent() as BaseEnemy
 		TakeDamage(enemy.damage)
