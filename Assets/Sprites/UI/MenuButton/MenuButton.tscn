@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://b114ssh3icr42"]
+
+[ext_resource type="Script" path="res://Assets/Sprites/UI/MenuButton/MenuButton.gd" id="1_oya7s"]
+[ext_resource type="Texture2D" uid="uid://ch23fplueb732" path="res://Assets/Sprites/buttons_4x.png" id="1_wpx6f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ubj2"]
+atlas = ExtResource("1_wpx6f")
+region = Rect2(131, 5, 90, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ik1od"]
+atlas = ExtResource("1_wpx6f")
+region = Rect2(131, 5, 90, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8ijr"]
+atlas = ExtResource("1_wpx6f")
+region = Rect2(131, 5, 90, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osjil"]
+atlas = ExtResource("1_wpx6f")
+region = Rect2(131, 5, 90, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0e5w2"]
+atlas = ExtResource("1_wpx6f")
+region = Rect2(131, 5, 90, 56)
+
+[node name="MenuButton" type="TextureButton"]
+texture_normal = SubResource("AtlasTexture_6ubj2")
+texture_pressed = SubResource("AtlasTexture_ik1od")
+texture_hover = SubResource("AtlasTexture_v8ijr")
+texture_disabled = SubResource("AtlasTexture_osjil")
+texture_focused = SubResource("AtlasTexture_0e5w2")
+script = ExtResource("1_oya7s")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 5.0
+offset_right = 53.0
+offset_bottom = 28.0
+scale = Vector2(1.52233, 1.52233)
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]

@@ -15,6 +15,11 @@ run/main_scene="res://Scenes/Levels/TestLevel.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+TransitionSignals="*res://Global Scripts/TransitionSignals.gd"
+LevelsCompleted="*res://Global Scripts/LevelsCompleted.gd"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg")
@@ -85,3 +90,7 @@ Back={
 3d_physics/layer_4="Enemy"
 3d_physics/layer_5="Player Projectile"
 3d_physics/layer_6="Enemy Projectile"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

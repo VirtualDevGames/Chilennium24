@@ -11,6 +11,3 @@ point_count = 3
 
 [node name="Eagle Sideways Path" instance=ExtResource("1_x1o76")]
 curve = SubResource("Curve3D_fcesv")
-
-[node name="PathFollow3D" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
