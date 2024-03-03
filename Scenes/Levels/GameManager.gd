@@ -15,3 +15,4 @@ func ToMainMenuLevelCleared():
 	TransitionSignals.FadeToBlack.emit()
 	await TransitionSignals.FadeToBlackFinished
 	get_tree().change_scene_to_file("res://Scenes/UI/MainMenuManager.tscn")
+

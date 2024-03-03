@@ -1,8 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://uvneydv4qsh4"]
+[gd_scene load_steps=22 format=3 uid="uid://uvneydv4qsh4"]
 
 [ext_resource type="Script" path="res://Scenes/UI/MainMenuManager.gd" id="1_cj6sm"]
 [ext_resource type="PackedScene" uid="uid://yig4mivt1cgh" path="res://Scenes/UI/TransitionFade.tscn" id="2_kbrr2"]
 [ext_resource type="PackedScene" uid="uid://b114ssh3icr42" path="res://Assets/Sprites/UI/MenuButton/MenuButton.tscn" id="2_srk5q"]
+[ext_resource type="Texture2D" uid="uid://d0mbfy4c8y5xv" path="res://Assets/backgrounds_Screens/coconutCopterLayoutForTitleScreen.png" id="2_u3mbk"]
 [ext_resource type="Texture2D" uid="uid://ch23fplueb732" path="res://Assets/Sprites/buttons_4x.png" id="2_xpbew"]
 [ext_resource type="Texture2D" uid="uid://eb7uhv3qrfrt" path="res://Assets/buttons/play_off.png" id="3_345hp"]
 [ext_resource type="Script" path="res://Scripts/LevelSelectManager.gd" id="4_4scid"]
@@ -113,23 +114,30 @@ mouse_filter = 2
 script = ExtResource("1_cj6sm")
 menu_animations = NodePath("Control Mover")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.600579, 0.600579)
+texture = ExtResource("2_u3mbk")
+
 [node name="All Control" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 16128.0
-offset_bottom = 9072.0
+offset_right = 2304.0
+offset_bottom = 1298.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
 [node name="MenuButton" parent="All Control" instance=ExtResource("2_srk5q")]
 layout_mode = 2
-offset_left = 484.0
-offset_top = 251.0
-offset_right = 7684.0
-offset_bottom = 5651.0
+offset_left = 735.0
+offset_top = 362.0
+offset_right = 7935.0
+offset_bottom = 5762.0
 scale = Vector2(0.0253826, 0.0253826)
 texture_pressed = ExtResource("3_345hp")
 texture_hover = ExtResource("4_sgag3")
@@ -141,10 +149,10 @@ move_direction = 3
 
 [node name="MenuButton2" parent="All Control" instance=ExtResource("2_srk5q")]
 layout_mode = 2
-offset_left = 484.0
-offset_top = 334.0
-offset_right = 7684.0
-offset_bottom = 5734.0
+offset_left = 735.0
+offset_top = 445.0
+offset_right = 7935.0
+offset_bottom = 5845.0
 scale = Vector2(0.0253826, 0.0253826)
 texture_normal = ExtResource("5_uvw2a")
 texture_pressed = ExtResource("6_aaifs")
@@ -160,8 +168,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -14976.0
-offset_bottom = -8422.0
+offset_right = -1152.0
+offset_bottom = -650.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -178,21 +186,20 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 1152.0
-offset_right = -4608.0
-offset_bottom = -3238.0
+offset_bottom = -650.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("4_4scid")
-checks = [NodePath("LevelButton/TextureRect"), NodePath(""), NodePath("")]
+checks = [NodePath("LevelButton/TextureRect"), null, null]
 
 [node name="LevelButton" parent="All Control/Level Screen" instance=ExtResource("4_juwgn")]
 layout_mode = 2
-offset_left = 505.0
-offset_top = 272.0
-offset_right = 7705.0
-offset_bottom = 5672.0
-scale = Vector2(0.0167228, 0.0167228)
+offset_left = 741.0
+offset_top = 373.0
+offset_right = 7941.0
+offset_bottom = 5773.0
+scale = Vector2(0.0236184, 0.0236184)
 mouse_filter = 1
 texture_normal = ExtResource("9_3fnn0")
 texture_pressed = ExtResource("10_esi64")
@@ -214,11 +221,12 @@ scale = Vector2(1.08884, 1.08884)
 texture = ExtResource("6_x3va7")
 
 [node name="Label" type="Label" parent="All Control/Level Screen"]
+visible = false
 layout_mode = 2
-offset_left = 445.0
-offset_top = 158.0
-offset_right = 706.0
-offset_bottom = 203.0
+offset_left = 761.0
+offset_top = 402.0
+offset_right = 1022.0
+offset_bottom = 447.0
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 32
 text = "Select Adventure"
@@ -255,8 +263,8 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -1152.0
-offset_right = -6912.0
-offset_bottom = -3238.0
+offset_right = -2304.0
+offset_bottom = -650.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -272,7 +280,6 @@ move_direction = 6
 button_text = "Back"
 
 [node name="FadeToBlack" parent="." instance=ExtResource("2_kbrr2")]
-visible = false
 
 [node name="Control Mover" type="AnimationPlayer" parent="."]
 libraries = {

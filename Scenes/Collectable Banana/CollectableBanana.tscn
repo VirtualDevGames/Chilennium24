@@ -43,7 +43,7 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.133219, 0.132201, 0)
 shape = SubResource("SphereShape3D_hprcb")
 
 [node name="Model" parent="." instance=ExtResource("4_0j5wg")]
-transform = Transform3D(-6.4145, -7.67165, 1.74845e-06, 7.67165, -6.4145, -4.91452e-12, 1.12155e-06, 1.34135e-06, 10, 0, 0, 0)
+transform = Transform3D(-6.4145, -7.67165, 1.74845e-06, 7.67165, -6.4145, -4.83428e-12, 1.12155e-06, 1.34135e-06, 10, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -24,6 +24,8 @@ func _on_hitbox_area_entered(area):
 		sfx_player.play()
 		visible = false
 		hitbox.queue_free()
+	if area.get_parent() is AutoScroller:
+		print("PLEAAAA")
 
 func _on_splat_sfx_finished():
 	queue_free()

@@ -159,7 +159,6 @@ func _on_can_move_timer_timeout():
 	knockback_force = base_knockback_force
 	can_move = true
 
-
 func _on_monkey_hitbox_area_entered(area):
 	if area.get_parent() is CollectableBanana:
 		var banana = area.get_parent() as CollectableBanana

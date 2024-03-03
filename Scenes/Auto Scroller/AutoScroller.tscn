@@ -12,9 +12,11 @@ size = Vector3(1, 40.73, 1)
 script = ExtResource("1_y4m1t")
 
 [node name="Area3D" type="Area3D" parent="."]
+collision_layer = 64
+collision_mask = 16
 
 [node name="Right Wall" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20.5, 0, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20.3632, 0, 0)
 shape = SubResource("BoxShape3D_xrw0s")
 
 [node name="Left Wall" type="CollisionShape3D" parent="Area3D"]
@@ -31,6 +33,7 @@ shape = SubResource("BoxShape3D_73o6d")
 
 [node name="Right Collision Wall" type="StaticBody3D" parent="."]
 collision_layer = 64
+collision_mask = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Right Collision Wall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.4521, 0, 0)
@@ -39,14 +42,16 @@ shape = SubResource("BoxShape3D_xrw0s")
 [node name="Left Collision Wall" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.9684, 0, 0)
 collision_layer = 64
+collision_mask = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Left Collision Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.4521, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.0443, 0, 0)
 shape = SubResource("BoxShape3D_xrw0s")
 
 [node name="Top Collision Wall" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 11.9516, 0)
 collision_layer = 64
+collision_mask = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Top Collision Wall"]
 shape = SubResource("BoxShape3D_73o6d")
@@ -54,6 +59,7 @@ shape = SubResource("BoxShape3D_73o6d")
 [node name="Bottom Collision Wall" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, -10.9506, 0)
 collision_layer = 64
+collision_mask = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bottom Collision Wall"]
 shape = SubResource("BoxShape3D_73o6d")

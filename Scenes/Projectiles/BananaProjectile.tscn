@@ -1,25 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://k2c8fk70ajvk"]
+[gd_scene load_steps=5 format=3 uid="uid://k2c8fk70ajvk"]
 
 [ext_resource type="Script" path="res://Scenes/Projectiles/ProjectileBase.gd" id="1_7i754"]
-[ext_resource type="Texture2D" uid="uid://hy5dnopmobtg" path="res://Assets/Test Grids/Red/texture_01.png" id="2_gjbig"]
+[ext_resource type="PackedScene" uid="uid://f6x6jg2j7ry5" path="res://Assets/models/banana_Coconut/Banana/BananaModel.tscn" id="2_usrqj"]
 [ext_resource type="AudioStream" uid="uid://bd4njpqhbigt7" path="res://Assets/Audio/SFX/splat_sfx.ogg" id="3_bsluf"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lo72j"]
-albedo_texture = ExtResource("2_gjbig")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_x18h0"]
 
 [node name="NormalProjectile" type="RigidBody3D"]
 collision_layer = 16
-collision_mask = 10
+collision_mask = 74
 gravity_scale = 0.0
 script = ExtResource("1_7i754")
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
-transform = Transform3D(0.2, 0, 0, 0, 0.086, 0, 0, 0, 0.076, 0, 0, 0)
-material = SubResource("StandardMaterial3D_lo72j")
+[node name="Root Scene" parent="." instance=ExtResource("2_usrqj")]
+transform = Transform3D(-2.18557e-07, -5, 0, 5, -2.18557e-07, 0, 0, 0, 5, -0.0190242, -0.00920409, 0)
 
 [node name="Hitbox" type="Area3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+collision_layer = 16
+collision_mask = 74
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
 transform = Transform3D(0.28829, 0, 0, 0, 0.28829, 0, 0, 0, 0.28829, 0, 0, 0)

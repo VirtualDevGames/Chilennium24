@@ -6,6 +6,7 @@ class_name LevelSelectButton
 @export_file var level_path
 
 var transitioning = true
+var can_press = true
 
 func _ready():
 	TransitionSignals.FadeToClearFinished.connect(SetTransitioning)
@@ -15,7 +16,9 @@ func _on_button_up():
 		print("path null")
 		return
 	#sfx_menu_select.play()
-	TransitionSignals.TransitionButtonPressed.emit(level_path)
+	if can_press:
+		can_press = false
+		TransitionSignals.TransitionButtonPressed.emit(level_path)
 
 func SetTransitioning():
 	transitioning = false

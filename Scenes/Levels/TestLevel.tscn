@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://t74emdt05py0"]
+[gd_scene load_steps=18 format=3 uid="uid://t74emdt05py0"]
 
 [ext_resource type="PackedScene" uid="uid://cyhkdwpdoucj4" path="res://Scenes/Characters/Player/Player.tscn" id="1_4spf0"]
 [ext_resource type="Script" path="res://Scenes/Levels/GameManager.gd" id="1_evwrm"]
@@ -8,38 +8,18 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_8crns"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3D.gd" id="5_kmr8p"]
 [ext_resource type="PackedScene" uid="uid://eaa3e6q6nx2g" path="res://Scenes/UI/InGameUI.tscn" id="6_ldcae"]
-[ext_resource type="PackedScene" uid="uid://cj364tf1pituh" path="res://Scenes/Obstacles/Islands/BaseIsland.tscn" id="7_kvn7x"]
 [ext_resource type="PackedScene" uid="uid://58kdfglurnjm" path="res://Scenes/Paths/Eagle UpDown Path.tscn" id="9_2mhal"]
 [ext_resource type="PackedScene" uid="uid://ls5np6o8qiw8" path="res://Scenes/Auto Scroller/AutoScroller.tscn" id="9_vtjwl"]
 [ext_resource type="PackedScene" uid="uid://c84bpfc7u50gy" path="res://Scenes/Paths/Eagle LeftRight Path.tscn" id="10_6j2yg"]
 [ext_resource type="PackedScene" uid="uid://ba38eaf55tkpe" path="res://Scenes/Collectable Banana/CollectableBanana.tscn" id="11_d5j2i"]
-[ext_resource type="Texture2D" uid="uid://cg4li231kmkdc" path="res://Assets/backgrounds_Screens/stage1/Background_sky.png" id="12_6y5yf"]
-[ext_resource type="Texture2D" uid="uid://o7savkpkrgdp" path="res://Assets/backgrounds_Screens/stage1/Background_ground.png" id="13_j3lpg"]
-[ext_resource type="Texture2D" uid="uid://cm6d57ao5lyxi" path="res://Assets/backgrounds_Screens/stage1/Background_clouds.png" id="14_7u8bu"]
-[ext_resource type="Texture2D" uid="uid://cmg10rimik83g" path="res://Assets/backgrounds_Screens/stage1/Background_water_02.png" id="14_bufvb"]
-[ext_resource type="Texture2D" uid="uid://pglpnu8sf1k0" path="res://Assets/backgrounds_Screens/stage1/Background_water03.png" id="15_irjpe"]
+[ext_resource type="PackedScene" uid="uid://ft08kjbi0q4t" path="res://Scenes/Win Flag/Win Flag.tscn" id="11_su3md"]
+[ext_resource type="Texture2D" uid="uid://bkvjrxuoegg2s" path="res://Assets/backgrounds_Screens/BACKGROUNDDAY.png" id="12_8m4er"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_lf467"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x5hso"]
 transparency = 1
-albedo_texture = ExtResource("12_6y5yf")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bvrlp"]
-transparency = 1
-albedo_texture = ExtResource("13_j3lpg")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hc32r"]
-transparency = 1
-albedo_texture = ExtResource("14_7u8bu")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6xqbq"]
-transparency = 1
-albedo_texture = ExtResource("15_irjpe")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cu4hs"]
-transparency = 1
-albedo_texture = ExtResource("14_bufvb")
+albedo_texture = ExtResource("12_8m4er")
 
 [sub_resource type="Curve3D" id="Curve3D_axgc3"]
 _data = {
@@ -53,7 +33,6 @@ script = ExtResource("1_evwrm")
 
 [node name="FadeToBlack" parent="." instance=ExtResource("2_lqlbp")]
 layer = 2
-visible = false
 
 [node name="InGameUi" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_ldcae")]
 player = NodePath("../Player")
@@ -76,14 +55,14 @@ z_as_relative = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.5197, 0, -0.278389)
 
 [node name="LevelCamera" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_kupa4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.1602, 0, 15)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.2307, 0, 15)
 player = NodePath("../Player")
 
 [node name="PhantomCameraHost" type="Node" parent="LevelCamera"]
 script = ExtResource("4_8crns")
 
 [node name="PhantomCamera3D" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.1602, 0, 15)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.2307, 0, 15)
 script = ExtResource("5_kmr8p")
 priority_override = false
 priority = 0
@@ -98,44 +77,17 @@ tween_on_load = false
 inactive_update_mode = 0
 camera_3D_resource = null
 
-[node name="BaseIsland" parent="." instance=ExtResource("7_kvn7x")]
-transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, -25.41, 8.45127, 0)
-
-[node name="BaseIsland2" parent="." instance=ExtResource("7_kvn7x")]
-transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, -8.55089, -8.43784, -1.90735e-06)
-
-[node name="BaseIsland3" parent="." instance=ExtResource("7_kvn7x")]
-transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, -0.0438552, 7.8662, 0)
+[node name="WinFlag" parent="." instance=ExtResource("11_su3md")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 160.993, 0, 0)
 
 [node name="AutoScroller" parent="." node_paths=PackedStringArray("player") instance=ExtResource("9_vtjwl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.1602, 0, 0)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.2307, 0, 0)
 player = NodePath("../Player")
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="AutoScroller"]
-transform = Transform3D(41.31, 0, 0, 0, 25.1413, 0, 0, 0, 1, -0.707996, -1.92577, -6.28248)
+transform = Transform3D(47.422, 0, 0, 0, 28.8611, 0, 0, 0, 1, -0.512478, 1.55065, -1.59903)
 mesh = SubResource("QuadMesh_lf467")
 material = SubResource("StandardMaterial3D_x5hso")
-
-[node name="CSGMesh3D2" type="CSGMesh3D" parent="AutoScroller"]
-transform = Transform3D(41.31, 0, 0, 0, 25.1413, 0, 0, 0, 1, -0.707996, -1.92577, -3.0042)
-mesh = SubResource("QuadMesh_lf467")
-material = SubResource("StandardMaterial3D_bvrlp")
-
-[node name="CSGMesh3D3" type="CSGMesh3D" parent="AutoScroller"]
-transform = Transform3D(41.31, 0, 0, 0, 25.1413, 0, 0, 0, 1, -0.707996, -1.92577, -2.82559)
-mesh = SubResource("QuadMesh_lf467")
-material = SubResource("StandardMaterial3D_hc32r")
-
-[node name="CSGMesh3D4" type="CSGMesh3D" parent="AutoScroller"]
-transform = Transform3D(41.31, 0, 0, 0, 25.1413, 0, 0, 0, 1, -0.707996, -1.92577, -2.82559)
-mesh = SubResource("QuadMesh_lf467")
-material = SubResource("StandardMaterial3D_6xqbq")
-
-[node name="CSGMesh3D5" type="CSGMesh3D" parent="AutoScroller"]
-transform = Transform3D(41.31, 0, 0, 0, 25.1413, 0, 0, 0, 1, -0.707996, -1.92577, -2.82559)
-mesh = SubResource("QuadMesh_lf467")
-material = SubResource("StandardMaterial3D_cu4hs")
 
 [node name="Eagle Up Down Path4" parent="." instance=ExtResource("9_2mhal")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.37953, -1.84288, 0.221615)
@@ -178,6 +130,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.3314, -3.21775, 0)
 
 [node name="Eagle Sideways Path4" parent="." instance=ExtResource("10_6j2yg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2998, 8.44293, 0)
+
+[node name="Eagle Sideways Path14" parent="." instance=ExtResource("10_6j2yg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.998, 6.29076, 0)
+
+[node name="Eagle Sideways Path15" parent="." instance=ExtResource("10_6j2yg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 145.626, -5.51746, 0)
 
 [node name="Eagle Sideways Path12" parent="." instance=ExtResource("10_6j2yg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.851, 2.05274, 9.53674e-07)
@@ -375,6 +333,90 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.373, -1.38824, 0)
 
 [node name="CollectableBanana58" parent="." instance=ExtResource("11_d5j2i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 141.604, -1.34544, 0)
+
+[node name="CollectableBanana59" parent="." instance=ExtResource("11_d5j2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146.585, 8.08996, 0)
+
+[node name="CollectableBanana60" parent="." instance=ExtResource("11_d5j2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147.727, 8.04351, 0)
+
+[node name="CollectableBanana61" parent="." instance=ExtResource("11_d5j2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 148.832, 8.01233, 0)
+
+[node name="CollectableBanana62" parent="." instance=ExtResource("11_d5j2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 149.855, 7.99633, 0)
+
+[node name="CollectableBanana63" parent="." instance=ExtResource("11_d5j2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146.855, 6.99633, 0)
+
+[node name="CollectableBanana64" parent="." instance=ExtResource("11_d5j2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 148.139, 6.92315, 0)
+
+[node name="CollectableBanana65" parent="." instance=ExtResource("11_d5j2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 149.232, 6.91057, 0)
+
+[node name="CollectableBanana66" parent="." instance=ExtResource("11_d5j2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146.345, 5.68913, 0)
+
+[node name="CollectableBanana67" parent="." instance=ExtResource("11_d5j2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147.383, 5.71071, 0)
+
+[node name="CollectableBanana68" parent="." instance=ExtResource("11_d5j2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 148.597, 5.65621, 0)
+
+[node name="CollectableBanana69" parent="." instance=ExtResource("11_d5j2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 149.998, 5.55745, 0)
+
+[node name="CollectableBanana70" parent="." instance=ExtResource("11_d5j2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146.643, 4.49099, 0)
+
+[node name="CollectableBanana71" parent="." instance=ExtResource("11_d5j2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147.886, 4.4557, 0)
+
+[node name="CollectableBanana72" parent="." instance=ExtResource("11_d5j2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 149.117, 4.4985, 0)
+
+[node name="CollectableBanana73" parent="." instance=ExtResource("11_d5j2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146.831, -3.51409, 0)
+
+[node name="CollectableBanana74" parent="." instance=ExtResource("11_d5j2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147.973, -3.56054, 0)
+
+[node name="CollectableBanana75" parent="." instance=ExtResource("11_d5j2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 149.078, -3.59172, 0)
+
+[node name="CollectableBanana76" parent="." instance=ExtResource("11_d5j2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150.101, -3.60772, 0)
+
+[node name="CollectableBanana77" parent="." instance=ExtResource("11_d5j2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147.101, -4.60772, 0)
+
+[node name="CollectableBanana78" parent="." instance=ExtResource("11_d5j2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 148.385, -4.6809, 0)
+
+[node name="CollectableBanana79" parent="." instance=ExtResource("11_d5j2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 149.478, -4.69348, 0)
+
+[node name="CollectableBanana80" parent="." instance=ExtResource("11_d5j2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146.591, -5.91492, 0)
+
+[node name="CollectableBanana81" parent="." instance=ExtResource("11_d5j2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147.629, -5.89334, 0)
+
+[node name="CollectableBanana82" parent="." instance=ExtResource("11_d5j2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 148.843, -5.94784, 0)
+
+[node name="CollectableBanana83" parent="." instance=ExtResource("11_d5j2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150.244, -6.0466, 0)
+
+[node name="CollectableBanana84" parent="." instance=ExtResource("11_d5j2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146.889, -7.11306, 0)
+
+[node name="CollectableBanana85" parent="." instance=ExtResource("11_d5j2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 148.132, -7.14835, 0)
+
+[node name="CollectableBanana86" parent="." instance=ExtResource("11_d5j2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 149.363, -7.10555, 0)
 
 [node name="CollectableBanana44" parent="." instance=ExtResource("11_d5j2i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114.795, -2.27021, 0)
