@@ -8,6 +8,9 @@ albedo_texture = ExtResource("2_yaycp")
 
 [node name="Root Scene" instance=ExtResource("1_8hv1d")]
 
+[node name="master2" parent="RootNode" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.79844e-05, -0.155913, -0.0494088)
+
 [node name="monkeyBody" parent="RootNode/master2/geo/monkey_GRP" index="0"]
 material_override = SubResource("StandardMaterial3D_crkhv")
 

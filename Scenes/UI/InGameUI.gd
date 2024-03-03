@@ -4,6 +4,7 @@ extends CanvasLayer
 @export var player : Player
 @onready var banana_counter_label = $"Banana Counter Label"
 var banana_counter = 0
+@export var level_path = "res://Scenes/UI/MainMenuManager.tscn"
 
 func _ready():
 	player.connect("TookDamage", UpdateMonkeys)
@@ -24,3 +25,7 @@ func UpdateBananas(value : int):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
+func _on_texture_button_button_up():
+	get_tree().change_scene_to_file(level_path)

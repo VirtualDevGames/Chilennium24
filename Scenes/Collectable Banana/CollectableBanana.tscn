@@ -7,6 +7,9 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_hprcb"]
 
+[sub_resource type="Animation" id="Animation_m70lj"]
+loop_mode = 1
+
 [sub_resource type="Animation" id="Animation_t8gj5"]
 resource_name = "Rotate"
 loop_mode = 1
@@ -22,9 +25,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 2.26769), Vector3(0, 6.28319, 2.26718)]
 }
-
-[sub_resource type="Animation" id="Animation_m70lj"]
-loop_mode = 1
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hqb4r"]
 _data = {
@@ -43,7 +43,7 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.133219, 0.132201, 0)
 shape = SubResource("SphereShape3D_hprcb")
 
 [node name="Model" parent="." instance=ExtResource("4_0j5wg")]
-transform = Transform3D(-6.4145, -7.67165, 1.74846e-06, 7.67165, -6.4145, 0, 1.12155e-06, 1.34135e-06, 10, 0, 0, 0)
+transform = Transform3D(-6.4145, -7.67165, 1.74845e-06, 7.67165, -6.4145, -4.91452e-12, 1.12155e-06, 1.34135e-06, 10, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -1,0 +1,73 @@
+[gd_scene load_steps=12 format=3 uid="uid://bg20padw3ibwh"]
+
+[ext_resource type="Texture2D" uid="uid://cg4li231kmkdc" path="res://Assets/backgrounds_Screens/stage1/Background_sky.png" id="1_3rabt"]
+[ext_resource type="Texture2D" uid="uid://pglpnu8sf1k0" path="res://Assets/backgrounds_Screens/stage1/Background_water03.png" id="2_2mlou"]
+[ext_resource type="Texture2D" uid="uid://cmg10rimik83g" path="res://Assets/backgrounds_Screens/stage1/Background_water_02.png" id="3_80xiy"]
+[ext_resource type="Texture2D" uid="uid://7283h6kelrir" path="res://Assets/backgrounds_Screens/stage1/Backgrounda_littleRock.png" id="4_ifnxb"]
+[ext_resource type="Texture2D" uid="uid://b38sf5cod1go7" path="res://Assets/backgrounds_Screens/stage1/Background.png" id="5_fktr2"]
+[ext_resource type="Texture2D" uid="uid://cm6d57ao5lyxi" path="res://Assets/backgrounds_Screens/stage1/Background_clouds.png" id="6_k8b48"]
+[ext_resource type="Texture2D" uid="uid://o7savkpkrgdp" path="res://Assets/backgrounds_Screens/stage1/Background_ground.png" id="7_kes48"]
+[ext_resource type="Texture2D" uid="uid://bh3nlvrbpt5yk" path="res://Assets/backgrounds_Screens/stage1/Background_rock_01.png" id="8_vrqby"]
+[ext_resource type="Texture2D" uid="uid://dado0djpq15jg" path="res://Assets/backgrounds_Screens/stage1/Background_tree3.png" id="9_dpf2e"]
+[ext_resource type="Texture2D" uid="uid://d4cbdiryk3lgj" path="res://Assets/backgrounds_Screens/stage1/Background_tree4.png" id="10_jaf3o"]
+[ext_resource type="Texture2D" uid="uid://duitlljnhxg84" path="res://Assets/backgrounds_Screens/stage1/Background_Tree.png" id="11_llryq"]
+
+[node name="Bg1" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(0.59787, 0.59787)
+
+[node name="BackgroundSky" type="TextureRect" parent="."]
+layout_mode = 1
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_3rabt")
+
+[node name="BackgroundWater03" type="Sprite2D" parent="."]
+position = Vector2(961, 541)
+texture = ExtResource("2_2mlou")
+
+[node name="BackgroundWater02" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(961, 541)
+texture = ExtResource("3_80xiy")
+
+[node name="BackgroundaLittleRock" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(965, 541)
+texture = ExtResource("4_ifnxb")
+
+[node name="Background" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(961, 541)
+texture = ExtResource("5_fktr2")
+
+[node name="BackgroundClouds" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(961, 541)
+texture = ExtResource("6_k8b48")
+
+[node name="BackgroundGround" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(961, 541)
+texture = ExtResource("7_kes48")
+
+[node name="BackgroundRock01" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(961, 541)
+texture = ExtResource("8_vrqby")
+
+[node name="BackgroundTree3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(961, 541)
+texture = ExtResource("9_dpf2e")
+
+[node name="BackgroundTree4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(961, 541)
+texture = ExtResource("10_jaf3o")
+
+[node name="BackgroundTree" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(961, 541)
+texture = ExtResource("11_llryq")

@@ -145,10 +145,6 @@ func _on_hitbox_area_entered(area):
 	if area.get_parent() is BaseProjectile:
 		return
 	if area.get_parent() is CollectableBanana:
-		var banana = area.get_parent() as CollectableBanana
-		GrabbedBanana.emit(banana.value)
-		banana.queue_free()
-		coin_grab.play()
 		return
 	if area.get_parent() is BaseEnemy:
 		var enemy = area.get_parent() as BaseEnemy
@@ -162,3 +158,12 @@ func _on_hitbox_area_entered(area):
 func _on_can_move_timer_timeout():
 	knockback_force = base_knockback_force
 	can_move = true
+
+
+func _on_monkey_hitbox_area_entered(area):
+	if area.get_parent() is CollectableBanana:
+		var banana = area.get_parent() as CollectableBanana
+		GrabbedBanana.emit(banana.value)
+		banana.queue_free()
+		coin_grab.play()
+		return
