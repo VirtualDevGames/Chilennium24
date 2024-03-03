@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=3 uid="uid://6s3wisfl08hv"]
+
+[ext_resource type="PackedScene" uid="uid://bslhr20ju7jyn" path="res://Assets/models/coconutCopter/Helicopter_Frame02.fbx" id="1_toly5"]
+[ext_resource type="Texture2D" uid="uid://blup7x46vttrl" path="res://Assets/models/monkey/cool/ashitfucvk_sunGlasses_BaseColor.png" id="2_x0dca"]
+[ext_resource type="Texture2D" uid="uid://qjqt52mqre3u" path="res://Assets/models/coconutCopter/monkeyCopter_low_lambert1_BaseColor.png" id="3_2vvow"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u6hha"]
+albedo_texture = ExtResource("2_x0dca")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p23kr"]
+albedo_texture = ExtResource("3_2vvow")
+
+[node name="Root Scene" instance=ExtResource("1_toly5")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
+
+[node name="monkeyBody" parent="RootNode/master/geo1/monkey_GRP" index="0"]
+material_override = SubResource("StandardMaterial3D_u6hha")
+
+[node name="l_monkeyArm" parent="RootNode/master/geo1/monkey_GRP" index="1"]
+material_override = SubResource("StandardMaterial3D_u6hha")
+
+[node name="r_monkeyArm" parent="RootNode/master/geo1/monkey_GRP" index="2"]
+material_override = SubResource("StandardMaterial3D_u6hha")
+
+[node name="l_monkeyHand" parent="RootNode/master/geo1/monkey_GRP" index="3"]
+material_override = SubResource("StandardMaterial3D_u6hha")
+
+[node name="r_monkeyHand" parent="RootNode/master/geo1/monkey_GRP" index="4"]
+material_override = SubResource("StandardMaterial3D_u6hha")
+
+[node name="monkeyShorts" parent="RootNode/master/geo1/monkey_GRP" index="5"]
+material_override = SubResource("StandardMaterial3D_u6hha")
+
+[node name="monkeyTail" parent="RootNode/master/geo1/monkey_GRP" index="6"]
+material_override = SubResource("StandardMaterial3D_u6hha")
+
+[node name="l_monkeyLeg" parent="RootNode/master/geo1/monkey_GRP" index="7"]
+material_override = SubResource("StandardMaterial3D_u6hha")
+
+[node name="r_monkeyLeg" parent="RootNode/master/geo1/monkey_GRP" index="8"]
+material_override = SubResource("StandardMaterial3D_u6hha")
+
+[node name="l_monkeyFoot" parent="RootNode/master/geo1/monkey_GRP" index="9"]
+material_override = SubResource("StandardMaterial3D_u6hha")
+
+[node name="r_monkeyFoot" parent="RootNode/master/geo1/monkey_GRP" index="10"]
+material_override = SubResource("StandardMaterial3D_u6hha")
+
+[node name="monkeyHead" parent="RootNode/master/geo1/monkey_GRP" index="11"]
+material_override = SubResource("StandardMaterial3D_u6hha")
+
+[node name="bamboo_low" parent="RootNode/helicopterAttempt_helicopterMaster_cc/monkeyCopter_low_allTogether" index="0"]
+material_override = SubResource("StandardMaterial3D_p23kr")
+
+[node name="screws_low" parent="RootNode/helicopterAttempt_helicopterMaster_cc/monkeyCopter_low_allTogether" index="1"]
+material_override = SubResource("StandardMaterial3D_p23kr")
+
+[node name="sideBlade_low" parent="RootNode/helicopterAttempt_helicopterMaster_cc/monkeyCopter_low_allTogether" index="2"]
+material_override = SubResource("StandardMaterial3D_p23kr")
+
+[node name="body_low" parent="RootNode/helicopterAttempt_helicopterMaster_cc/monkeyCopter_low_allTogether" index="3"]
+material_override = SubResource("StandardMaterial3D_p23kr")
+
+[node name="topBlade_low" parent="RootNode/helicopterAttempt_helicopterMaster_cc/monkeyCopter_low_allTogether" index="4"]
+material_override = SubResource("StandardMaterial3D_p23kr")
+
+[node name="rope_low" parent="RootNode/helicopterAttempt_helicopterMaster_cc/monkeyCopter_low_allTogether" index="5"]
+material_override = SubResource("StandardMaterial3D_p23kr")
+
+[node name="handle_low" parent="RootNode/helicopterAttempt_helicopterMaster_cc/monkeyCopter_low_allTogether/handle_transforms" index="0"]
+material_override = SubResource("StandardMaterial3D_p23kr")

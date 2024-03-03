@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://6768u15o2tki"]
+
+[ext_resource type="Script" path="res://Assets/Sprites/UI/LevelButton/LevelButton.gd" id="1_io8hu"]
+[ext_resource type="Texture2D" uid="uid://ch23fplueb732" path="res://Assets/Sprites/buttons_4x.png" id="1_xcc3q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7f0nx"]
+atlas = ExtResource("1_xcc3q")
+region = Rect2(131, 5, 90, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8h2ye"]
+atlas = ExtResource("1_xcc3q")
+region = Rect2(131, 5, 90, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ulw5s"]
+atlas = ExtResource("1_xcc3q")
+region = Rect2(131, 5, 90, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r18sm"]
+atlas = ExtResource("1_xcc3q")
+region = Rect2(131, 5, 90, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itwfb"]
+atlas = ExtResource("1_xcc3q")
+region = Rect2(131, 5, 90, 56)
+
+[node name="LevelButton" type="TextureButton"]
+texture_normal = SubResource("AtlasTexture_7f0nx")
+texture_pressed = SubResource("AtlasTexture_8h2ye")
+texture_hover = SubResource("AtlasTexture_ulw5s")
+texture_disabled = SubResource("AtlasTexture_r18sm")
+texture_focused = SubResource("AtlasTexture_itwfb")
+script = ExtResource("1_io8hu")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 7.0
+offset_right = 53.0
+offset_bottom = 30.0
+scale = Vector2(1.58636, 1.58636)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]

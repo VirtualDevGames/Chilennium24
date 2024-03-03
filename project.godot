@@ -13,7 +13,13 @@ config_version=5
 config/name="Base Template"
 run/main_scene="res://Scenes/Levels/TestLevel.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+run/max_fps=144
 config/icon="res://icon.svg"
+
+[autoload]
+
+TransitionSignals="*res://Global Scripts/TransitionSignals.gd"
+LevelsCompleted="*res://Global Scripts/LevelsCompleted.gd"
 
 [editor_plugins]
 
@@ -85,3 +91,12 @@ Back={
 3d_physics/layer_4="Enemy"
 3d_physics/layer_5="Player Projectile"
 3d_physics/layer_6="Enemy Projectile"
+3d_physics/layer_7="Outer Bounds"
+
+[physics]
+
+3d/default_gravity=0.0
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

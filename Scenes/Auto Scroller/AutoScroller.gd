@@ -16,3 +16,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	global_position.x += level_speed * delta
+
+func _on_area_3d_area_entered(area):
+	if area.get_parent() is BaseProjectile:
+		area.get_parent().queue_free()

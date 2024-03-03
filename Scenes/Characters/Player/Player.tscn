@@ -1,10 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://cyhkdwpdoucj4"]
+[gd_scene load_steps=19 format=3 uid="uid://cyhkdwpdoucj4"]
 
 [ext_resource type="Script" path="res://Scenes/Characters/Player/Player.gd" id="1_wpn0a"]
 [ext_resource type="Texture2D" uid="uid://hy5dnopmobtg" path="res://Assets/Test Grids/Red/texture_01.png" id="2_ppcil"]
+[ext_resource type="PackedScene" uid="uid://ucrtypft0pgp" path="res://Assets/models/coconutCopter/Colored/Copter3.tscn" id="3_jjbi5"]
 [ext_resource type="Texture2D" uid="uid://cgu4eqqbe8eyj" path="res://Assets/Test Grids/Red/texture_02.png" id="3_lp5kj"]
+[ext_resource type="PackedScene" uid="uid://dfakv6xuxo5g2" path="res://Assets/models/coconutCopter/Colored/Copter4.tscn" id="4_facri"]
 [ext_resource type="Texture2D" uid="uid://bm8djub5otix2" path="res://Assets/Test Grids/Purple/texture_02.png" id="4_qcxva"]
 [ext_resource type="PackedScene" uid="uid://1s1hy31yra8" path="res://Scenes/Characters/Monkey/Monkey.tscn" id="5_itwcv"]
+[ext_resource type="AudioStream" uid="uid://bgelewtm6n0el" path="res://Assets/Audio/SFX/pop_sfx.ogg" id="6_drprm"]
+[ext_resource type="PackedScene" uid="uid://duf86d76qstre" path="res://Assets/models/coconutCopter/Colored/Copter1.tscn" id="7_7kfm1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bfrhh"]
 albedo_texture = ExtResource("2_ppcil")
@@ -19,15 +23,114 @@ albedo_texture = ExtResource("4_qcxva")
 albedo_texture = ExtResource("4_qcxva")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_svd0i"]
+size = Vector3(2.195, 1.89, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_hv0jd"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_22n62"]
+size = Vector3(2.195, 2.31, 1)
+
+[sub_resource type="Animation" id="Animation_r5ads"]
+resource_name = "Flying"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/Copter 1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, false, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/3:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node3D/4:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_vcc4b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/Copter 1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/3:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node3D/4:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ox2s3"]
+_data = {
+"Flying": SubResource("Animation_r5ads"),
+"RESET": SubResource("Animation_vcc4b")
+}
 
 [node name="Player" type="CharacterBody3D"]
-collision_mask = 38
+collision_mask = 102
 script = ExtResource("1_wpn0a")
 hp = 3
 
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0556384, -0.636158, 0)
+
+[node name="Copter 1" parent="Node3D" instance=ExtResource("7_7kfm1")]
+
+[node name="3" parent="Node3D" instance=ExtResource("3_jjbi5")]
+
+[node name="4" parent="Node3D" instance=ExtResource("4_facri")]
+visible = false
+
 [node name="Head" type="CSGBox3D" parent="."]
+visible = false
 material = SubResource("StandardMaterial3D_bfrhh")
 
 [node name="Tail" type="CSGBox3D" parent="Head"]
@@ -51,6 +154,7 @@ size = Vector3(0.309082, 0.957947, 0.412598)
 material = SubResource("StandardMaterial3D_o3jsk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.269417, 0)
 shape = SubResource("BoxShape3D_svd0i")
 
 [node name="Monkey" parent="." instance=ExtResource("5_itwcv")]
@@ -63,12 +167,15 @@ transform = Transform3D(0.305, 0, 0, 0, 0.305, 0, 0, 0, 0.305, -0.014, -1.49733,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.300677, -1.71566, 0)
 
 [node name="Hitbox" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.213129, 0.118322, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
-shape = SubResource("BoxShape3D_hv0jd")
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, -0.261478, 0)
+shape = SubResource("BoxShape3D_22n62")
 
 [node name="Shooting Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
 
 [node name="Invulnerablility Timer" type="Timer" parent="."]
 one_shot = true
@@ -76,6 +183,20 @@ one_shot = true
 [node name="Can Move Timer" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
+
+[node name="Floaty Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="Shoot SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_drprm")
+bus = &"SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ox2s3")
+}
+autoplay = "Flying"
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="timeout" from="Shooting Timer" to="." method="_on_shooting_timer_timeout"]

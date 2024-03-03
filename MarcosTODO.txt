@@ -2,8 +2,16 @@ TODO
 
 IMPORTANT:
 - Player shooting timer mechanic
-- Kill projectiles when out of screen
+- Bomb shot
+- Swing monkeys on movement
+- Level goal and transition to main or next level
 
 AFTER:
-- Make sure camera follow player properly
+
 - Camera not jitter when following player
+
+DONE
+- Kill projectiles when out of screen
+- Player Outer Bounds
+- Make sure camera follow player properly
+- Player floaty feel
