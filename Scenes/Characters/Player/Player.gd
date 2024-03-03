@@ -17,6 +17,7 @@ var current_projectile = banana_projectile
 @onready var invuln_timer = $"Invulnerablility Timer"
 @onready var can_move_timer = $"Can Move Timer"
 @onready var shooting_timer = $"Shooting Timer"
+@onready var animation_player = $AnimationPlayer
 
 @onready var shoot_sfx = $"Shoot SFX"
 
@@ -45,6 +46,7 @@ var lerp_after_movement = false
 func _ready():
 	if game_manager:
 		level_speed = game_manager.level_speed
+	#animation_player.play("Flying")
 
 func _physics_process(delta):
 	# Add the gravity.
