@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4d0cmr6sy2uu"]
+
+[ext_resource type="PackedScene" uid="uid://ciihd1e6tjcvk" path="res://Assets/models/vines/Vine01.fbx" id="1_vou3t"]
+[ext_resource type="Texture2D" uid="uid://sxu64x6hp0xg" path="res://Assets/models/vines/vinesdFBX_lambert1_BaseColor.png" id="2_o0ghe"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jkdmt"]
+albedo_texture = ExtResource("2_o0ghe")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6u34w"]
+albedo_texture = ExtResource("2_o0ghe")
+
+[node name="Root Scene" instance=ExtResource("1_vou3t")]
+
+[node name="Vine01" parent="RootNode" index="0"]
+material_override = SubResource("StandardMaterial3D_jkdmt")
+
+[node name="Leaf10" parent="RootNode/Vine01" index="0"]
+material_override = SubResource("StandardMaterial3D_6u34w")
+
+[node name="Leaf09" parent="RootNode/Vine01" index="1"]
+material_override = SubResource("StandardMaterial3D_6u34w")
+
+[node name="Leaf08" parent="RootNode/Vine01" index="2"]
+material_override = SubResource("StandardMaterial3D_6u34w")
+
+[node name="Leaf07" parent="RootNode/Vine01" index="3"]
+material_override = SubResource("StandardMaterial3D_6u34w")
+
+[node name="Leaf06" parent="RootNode/Vine01" index="4"]
+material_override = SubResource("StandardMaterial3D_6u34w")
+
+[node name="Leaf05" parent="RootNode/Vine01" index="5"]
+material_override = SubResource("StandardMaterial3D_6u34w")
+
+[node name="Leaf04" parent="RootNode/Vine01" index="6"]
+material_override = SubResource("StandardMaterial3D_6u34w")
+
+[node name="Leaf03" parent="RootNode/Vine01" index="7"]
+material_override = SubResource("StandardMaterial3D_6u34w")
+
+[node name="Leaf02" parent="RootNode/Vine01" index="8"]
+material_override = SubResource("StandardMaterial3D_6u34w")
+
+[node name="Leaf01" parent="RootNode/Vine01" index="9"]
+material_override = SubResource("StandardMaterial3D_6u34w")

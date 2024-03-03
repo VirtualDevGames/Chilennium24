@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvfvyrnjrqoa6"]
+
+[ext_resource type="PackedScene" uid="uid://cs2oa3e2t20ie" path="res://Assets/models/monkey/Monkey_01.fbx" id="1_8hv1d"]
+[ext_resource type="Texture2D" uid="uid://44ovecl80gyx" path="res://Assets/models/monkey/goofy/ashitfucvk_lambert1_BaseColor.png" id="2_yaycp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_crkhv"]
+albedo_texture = ExtResource("2_yaycp")
+
+[node name="Root Scene" instance=ExtResource("1_8hv1d")]
+
+[node name="monkeyBody" parent="RootNode/master2/geo/monkey_GRP" index="0"]
+material_override = SubResource("StandardMaterial3D_crkhv")
+
+[node name="l_monkeyArm" parent="RootNode/master2/geo/monkey_GRP" index="1"]
+material_override = SubResource("StandardMaterial3D_crkhv")
+
+[node name="r_monkeyArm" parent="RootNode/master2/geo/monkey_GRP" index="2"]
+material_override = SubResource("StandardMaterial3D_crkhv")
+
+[node name="l_monkeyHand" parent="RootNode/master2/geo/monkey_GRP" index="3"]
+material_override = SubResource("StandardMaterial3D_crkhv")
+
+[node name="r_monkeyHand" parent="RootNode/master2/geo/monkey_GRP" index="4"]
+material_override = SubResource("StandardMaterial3D_crkhv")
+
+[node name="monkeyShorts" parent="RootNode/master2/geo/monkey_GRP" index="5"]
+material_override = SubResource("StandardMaterial3D_crkhv")
+
+[node name="monkeyTail" parent="RootNode/master2/geo/monkey_GRP" index="6"]
+material_override = SubResource("StandardMaterial3D_crkhv")
+
+[node name="l_monkeyLeg" parent="RootNode/master2/geo/monkey_GRP" index="7"]
+material_override = SubResource("StandardMaterial3D_crkhv")
+
+[node name="r_monkeyLeg" parent="RootNode/master2/geo/monkey_GRP" index="8"]
+material_override = SubResource("StandardMaterial3D_crkhv")
+
+[node name="l_monkeyFoot" parent="RootNode/master2/geo/monkey_GRP" index="9"]
+material_override = SubResource("StandardMaterial3D_crkhv")
+
+[node name="r_monkeyFoot" parent="RootNode/master2/geo/monkey_GRP" index="10"]
+material_override = SubResource("StandardMaterial3D_crkhv")
+
+[node name="monkeyHead" parent="RootNode/master2/geo/monkey_GRP" index="11"]
+material_override = SubResource("StandardMaterial3D_crkhv")

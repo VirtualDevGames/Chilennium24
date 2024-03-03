@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn5xquvbrhuue"
-path.s3tc="res://.godot/imported/fdkhasjkhdjk_tigerDead_BaseColor.png-749771a4356d0cb246d282001244d8f7.s3tc.ctex"
+uid="uid://wjy5lcytmiwx"
+path.s3tc="res://.godot/imported/threeeeeeee_lambert1_BaseColor.png-6e5585e17ed057ed4784a47910f46830.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/models/tiger/dead/fdkhasjkhdjk_tigerDead_BaseColor.png"
-dest_files=["res://.godot/imported/fdkhasjkhdjk_tigerDead_BaseColor.png-749771a4356d0cb246d282001244d8f7.s3tc.ctex"]
+source_file="res://Assets/models/trees/threeeeeeee_lambert1_BaseColor.png"
+dest_files=["res://.godot/imported/threeeeeeee_lambert1_BaseColor.png-6e5585e17ed057ed4784a47910f46830.s3tc.ctex"]
 
 [params]
 

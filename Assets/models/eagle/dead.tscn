@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmw8utx66o3tt"]
+
+[ext_resource type="PackedScene" uid="uid://b72r6o8u04frg" path="res://Assets/models/eagle/dead/Eagle_PoseDead (1).fbx" id="1_vps4o"]
+[ext_resource type="Texture2D" uid="uid://dd8j5j2sti2m3" path="res://Assets/models/eagle/dead/shitttttttttttttttttttttttttttttttttttt_eagleDead_BaseColor.png" id="2_u004n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gbag0"]
+albedo_texture = ExtResource("2_u004n")
+
+[node name="Root Scene" instance=ExtResource("1_vps4o")]
+
+[node name="headEagle" parent="RootNode/master/Eagle_GRP1" index="0"]
+material_override = SubResource("StandardMaterial3D_gbag0")
+
+[node name="topBeak" parent="RootNode/master/Eagle_GRP1" index="1"]
+material_override = SubResource("StandardMaterial3D_gbag0")
+
+[node name="rightWing" parent="RootNode/master/Eagle_GRP1" index="2"]
+material_override = SubResource("StandardMaterial3D_gbag0")
+
+[node name="leftWing" parent="RootNode/master/Eagle_GRP1" index="3"]
+material_override = SubResource("StandardMaterial3D_gbag0")
+
+[node name="leftTail" parent="RootNode/master/Eagle_GRP1" index="4"]
+material_override = SubResource("StandardMaterial3D_gbag0")
+
+[node name="rightTail" parent="RootNode/master/Eagle_GRP1" index="5"]
+material_override = SubResource("StandardMaterial3D_gbag0")
+
+[node name="middleTail" parent="RootNode/master/Eagle_GRP1" index="6"]
+material_override = SubResource("StandardMaterial3D_gbag0")
+
+[node name="leftLeg" parent="RootNode/master/Eagle_GRP1" index="7"]
+material_override = SubResource("StandardMaterial3D_gbag0")
+
+[node name="leftTalons" parent="RootNode/master/Eagle_GRP1" index="8"]
+material_override = SubResource("StandardMaterial3D_gbag0")
+
+[node name="rightTalons" parent="RootNode/master/Eagle_GRP1" index="9"]
+material_override = SubResource("StandardMaterial3D_gbag0")
+
+[node name="rightLeg" parent="RootNode/master/Eagle_GRP1" index="10"]
+material_override = SubResource("StandardMaterial3D_gbag0")
+
+[node name="bottomBeak" parent="RootNode/master/Eagle_GRP1" index="11"]
+material_override = SubResource("StandardMaterial3D_gbag0")
+
+[node name="neckEagle" parent="RootNode/master/Eagle_GRP1" index="12"]
+material_override = SubResource("StandardMaterial3D_gbag0")
+
+[node name="bodyEagle" parent="RootNode/master/Eagle_GRP1" index="13"]
+material_override = SubResource("StandardMaterial3D_gbag0")

@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxbtcfsa2bqqp"]
+
+[ext_resource type="PackedScene" uid="uid://668cb5ferj14" path="res://Assets/models/grass_start_mid_end_Blocks/midBlock.fbx" id="1_6obio"]
+[ext_resource type="Texture2D" uid="uid://bu58syc5xmd4l" path="res://Assets/models/grass_start_mid_end_Blocks/blocksToPaint_grass_BaseColor.png" id="2_6lw1p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6s50p"]
+albedo_texture = ExtResource("2_6lw1p")
+
+[node name="Root Scene" instance=ExtResource("1_6obio")]
+
+[node name="midBlock" parent="RootNode" index="0"]
+material_override = SubResource("StandardMaterial3D_6s50p")

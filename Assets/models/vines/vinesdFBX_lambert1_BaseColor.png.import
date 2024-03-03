@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn5xquvbrhuue"
-path.s3tc="res://.godot/imported/fdkhasjkhdjk_tigerDead_BaseColor.png-749771a4356d0cb246d282001244d8f7.s3tc.ctex"
+uid="uid://sxu64x6hp0xg"
+path.s3tc="res://.godot/imported/vinesdFBX_lambert1_BaseColor.png-ddcae1aaf90467fdbfec26216f997508.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/models/tiger/dead/fdkhasjkhdjk_tigerDead_BaseColor.png"
-dest_files=["res://.godot/imported/fdkhasjkhdjk_tigerDead_BaseColor.png-749771a4356d0cb246d282001244d8f7.s3tc.ctex"]
+source_file="res://Assets/models/vines/vinesdFBX_lambert1_BaseColor.png"
+dest_files=["res://.godot/imported/vinesdFBX_lambert1_BaseColor.png-ddcae1aaf90467fdbfec26216f997508.s3tc.ctex"]
 
 [params]
 

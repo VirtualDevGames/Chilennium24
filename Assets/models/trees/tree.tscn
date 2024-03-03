@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://brrpgrk0isj3d"]
+
+[ext_resource type="PackedScene" uid="uid://hxbmv8s5gw57" path="res://Assets/models/trees/tree.fbx" id="1_xnk3w"]
+[ext_resource type="Texture2D" uid="uid://wjy5lcytmiwx" path="res://Assets/models/trees/threeeeeeee_lambert1_BaseColor.png" id="2_4ndja"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kt8yi"]
+albedo_texture = ExtResource("2_4ndja")
+
+[node name="Root Scene" instance=ExtResource("1_xnk3w")]
+
+[node name="treeTrunk" parent="RootNode/Tree01" index="0"]
+material_override = SubResource("StandardMaterial3D_kt8yi")
+
+[node name="treeFoliage01" parent="RootNode/Tree01" index="1"]
+material_override = SubResource("StandardMaterial3D_kt8yi")
+
+[node name="treeFoliage02" parent="RootNode/Tree01" index="2"]
+material_override = SubResource("StandardMaterial3D_kt8yi")
+
+[node name="treeFoliage03" parent="RootNode/Tree01" index="3"]
+material_override = SubResource("StandardMaterial3D_kt8yi")
+
+[node name="treeFoliage04" parent="RootNode/Tree01" index="4"]
+material_override = SubResource("StandardMaterial3D_kt8yi")
+
+[node name="treeFoliage05" parent="RootNode/Tree01" index="5"]
+material_override = SubResource("StandardMaterial3D_kt8yi")
+
+[node name="treeFoliage06" parent="RootNode/Tree01" index="6"]
+material_override = SubResource("StandardMaterial3D_kt8yi")
+
+[node name="treeFoliage07" parent="RootNode/Tree01" index="7"]
+material_override = SubResource("StandardMaterial3D_kt8yi")

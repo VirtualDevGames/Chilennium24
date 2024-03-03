@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://cw3gr0txojvrb"]
+
+[ext_resource type="PackedScene" uid="uid://b1ywtawk2gwdp" path="res://Assets/models/tiger/live/Tiger_Frame01.fbx" id="1_aa3xd"]
+[ext_resource type="Texture2D" uid="uid://dq3jgdcdoc0pc" path="res://Assets/models/tiger/live/fdkhasjkhdjk_tigerLive_BaseColor.png" id="2_w0nq6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bags"]
+albedo_texture = ExtResource("2_w0nq6")
+
+[node name="Root Scene" instance=ExtResource("1_aa3xd")]
+
+[node name="pCylinder34" parent="RootNode/geo1" index="0"]
+material_override = SubResource("StandardMaterial3D_1bags")
+
+[node name="pCylinder32" parent="RootNode/geo1" index="1"]
+material_override = SubResource("StandardMaterial3D_1bags")
+
+[node name="pCylinder39" parent="RootNode/geo1" index="2"]
+material_override = SubResource("StandardMaterial3D_1bags")
+
+[node name="pCylinder40" parent="RootNode/geo1" index="3"]
+material_override = SubResource("StandardMaterial3D_1bags")
+
+[node name="pSphere18" parent="RootNode/geo1" index="4"]
+material_override = SubResource("StandardMaterial3D_1bags")
+
+[node name="pCylinder38" parent="RootNode/geo1" index="5"]
+material_override = SubResource("StandardMaterial3D_1bags")
+
+[node name="pCylinder41" parent="RootNode/geo1" index="6"]
+material_override = SubResource("StandardMaterial3D_1bags")
+
+[node name="pSphere23" parent="RootNode/geo1" index="7"]
+material_override = SubResource("StandardMaterial3D_1bags")
+
+[node name="pSphere22" parent="RootNode/geo1" index="8"]
+material_override = SubResource("StandardMaterial3D_1bags")
+
+[node name="pSphere24" parent="RootNode/geo1" index="9"]
+material_override = SubResource("StandardMaterial3D_1bags")
+
+[node name="pCylinder35" parent="RootNode/geo1" index="10"]
+material_override = SubResource("StandardMaterial3D_1bags")
+
+[node name="pSphere21" parent="RootNode/geo1" index="11"]
+material_override = SubResource("StandardMaterial3D_1bags")
+
+[node name="pSphere20" parent="RootNode/geo1" index="12"]
+material_override = SubResource("StandardMaterial3D_1bags")
