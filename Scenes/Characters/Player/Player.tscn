@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://cyhkdwpdoucj4"]
+[gd_scene load_steps=13 format=3 uid="uid://cyhkdwpdoucj4"]
 
 [ext_resource type="Script" path="res://Scenes/Characters/Player/Player.gd" id="1_wpn0a"]
 [ext_resource type="Texture2D" uid="uid://hy5dnopmobtg" path="res://Assets/Test Grids/Red/texture_01.png" id="2_ppcil"]
 [ext_resource type="Texture2D" uid="uid://cgu4eqqbe8eyj" path="res://Assets/Test Grids/Red/texture_02.png" id="3_lp5kj"]
 [ext_resource type="Texture2D" uid="uid://bm8djub5otix2" path="res://Assets/Test Grids/Purple/texture_02.png" id="4_qcxva"]
 [ext_resource type="PackedScene" uid="uid://1s1hy31yra8" path="res://Scenes/Characters/Monkey/Monkey.tscn" id="5_itwcv"]
+[ext_resource type="AudioStream" uid="uid://bgelewtm6n0el" path="res://Assets/Audio/SFX/pop_sfx.ogg" id="6_drprm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bfrhh"]
 albedo_texture = ExtResource("2_ppcil")
@@ -76,6 +77,14 @@ one_shot = true
 [node name="Can Move Timer" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
+
+[node name="Floaty Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="Shoot SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_drprm")
+bus = &"SFX"
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="timeout" from="Shooting Timer" to="." method="_on_shooting_timer_timeout"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://k2c8fk70ajvk"]
+[gd_scene load_steps=6 format=3 uid="uid://k2c8fk70ajvk"]
 
 [ext_resource type="Script" path="res://Scenes/Projectiles/ProjectileBase.gd" id="1_7i754"]
 [ext_resource type="Texture2D" uid="uid://hy5dnopmobtg" path="res://Assets/Test Grids/Red/texture_01.png" id="2_gjbig"]
+[ext_resource type="AudioStream" uid="uid://bd4njpqhbigt7" path="res://Assets/Audio/SFX/splat_sfx.ogg" id="3_bsluf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lo72j"]
 albedo_texture = ExtResource("2_gjbig")
@@ -23,5 +24,10 @@ material = SubResource("StandardMaterial3D_lo72j")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
 transform = Transform3D(0.28829, 0, 0, 0, 0.28829, 0, 0, 0, 0.28829, 0, 0, 0)
 shape = SubResource("SphereShape3D_x18h0")
+
+[node name="Splat SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_bsluf")
+volume_db = 6.0
+bus = &"SFX"
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

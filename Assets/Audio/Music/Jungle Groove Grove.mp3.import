@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b8b6ohfe8r3vf"
+path="res://.godot/imported/Jungle Groove Grove.mp3-bdccb214014a89151b06f8f8a50a6bc1.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Jungle Groove Grove.mp3"
+dest_files=["res://.godot/imported/Jungle Groove Grove.mp3-bdccb214014a89151b06f8f8a50a6bc1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

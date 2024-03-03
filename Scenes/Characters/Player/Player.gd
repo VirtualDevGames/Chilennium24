@@ -4,6 +4,8 @@ class_name Player
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 var level_speed = 5
+var acceleration = 1
+var deceleration = 0.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -14,6 +16,8 @@ var current_projectile = banana_projectile
 @onready var shoot_location = $"Shoot Location"
 @onready var invuln_timer = $"Invulnerablility Timer"
 @onready var can_move_timer = $"Can Move Timer"
+
+@onready var shoot_sfx = $"Shoot SFX"
 
 var can_shoot = true
 var can_move = true
@@ -29,6 +33,12 @@ var damaged_vector : Vector2
 var base_knockback_force = 500
 var knockback_force = base_knockback_force
 var knockback_decrease = -25
+
+@onready var floaty_timer = $"Floaty Timer"
+var floaty_vector : Vector2
+var base_floaty_force = 500
+var floaty_force = base_floaty_force
+var floaty_decrease = -25
 
 func _ready():
 	if game_manager:
@@ -55,22 +65,41 @@ func _physics_process(delta):
 			rotation_degrees.z = -10
 		
 		if direction.x < 0:
-			velocity.x = direction.x * SPEED * 1.2
+			#velocity.x = direction.x * SPEED * 1.2
+			velocity.x = min(velocity.x + acceleration, SPEED)
 		else:
-			velocity.x = direction.x * SPEED
+			#velocity.x = direction.x * SPEED
+			velocity.x = max(velocity.x + acceleration, SPEED)
 		velocity.y = -direction.z * SPEED
+		
+		floaty_vector = Vector2(velocity.x * delta, velocity.y * delta)
+		## Move player along auto-scroll
+		velocity.x += level_speed
+		floaty_force = base_floaty_force
 	else:
 		rotation_degrees.z = 0
 		velocity.x = (direction.x * level_speed)
 		velocity.y = -move_toward(velocity.z, 0, SPEED)
+		## Move player along auto scroll with float
 		
-	velocity.x += level_speed# * delta
+		velocity.x = (-floaty_vector.x * delta) * (floaty_force * delta)
+		velocity.y = (-floaty_vector.y * delta) * (floaty_force * delta)
+		
+		if floaty_force + floaty_decrease > 1:
+			floaty_force += floaty_decrease
+		print(velocity.x)
+		if floaty_force <= 1:
+			floaty_force = 1
+		
+		velocity.x += level_speed
+	#velocity.x += level_speed# * delta
 	
 	if Input.is_action_just_pressed("Shoot"):# && can_shoot:
 		can_shoot = false
 		var new_projectile = (banana_projectile.instantiate()) as BaseProjectile
 		get_parent().add_child(new_projectile)
 		new_projectile.global_position = shoot_location.global_position
+		shoot_sfx.play()
 	
 	#if Input.is_action_just_pressed("Take Damage"):# && can_shoot:
 	#	TakeDamage(1)

@@ -34,9 +34,9 @@ func _on_button_up():
 		Direction.Down:
 			menu_animations.play("Options")
 		Direction.Left:
-			menu_animations.play("Credits")
+			menu_animations.play("MainToCredits")
 		Direction.Right:
-			menu_animations.play("LevelSelect")
+			menu_animations.play("MainToLevels")
 		Direction.Quit:
 			get_tree().quit()
 		Direction.LevelsToMain:
